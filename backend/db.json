@@ -1,0 +1,18 @@
+{
+  "medicos": [
+    {
+      "id": "doc-demo-1",
+      "nome": "Dr. Demonstração",
+      "email": "demo@clinica.com",
+      "senha": "123",
+      "pacientes": []
+    },
+    {
+      "id": "doc-demo-2",
+      "nome": "Dra. Exemplo",
+      "email": "exemplo@clinica.com",
+      "senha": "123",
+      "pacientes": []
+    }
+  ]
+}
