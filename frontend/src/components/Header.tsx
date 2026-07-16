@@ -1,24 +1,13 @@
-import { Link, useNavigate, useRouter } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useAuth } from "@/context/AuthContext";
 import { Pill, LogOut } from "lucide-react";
 
 export function Header() {
-  const [email, setEmail] = useState<string | null>(null);
   const navigate = useNavigate();
-  const router = useRouter();
+  const { doctor, logout } = useAuth();
 
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setEmail(data.user?.email ?? null));
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      setEmail(session?.user?.email ?? null);
-      router.invalidate();
-    });
-    return () => sub.subscription.unsubscribe();
-  }, [router]);
-
-  async function signOut() {
-    await supabase.auth.signOut();
+  function signOut() {
+    logout();
     navigate({ to: "/auth", replace: true });
   }
 
@@ -38,9 +27,9 @@ export function Header() {
             </div>
           </div>
         </Link>
-        {email ? (
+        {doctor ? (
           <div className="flex items-center gap-3">
-            <span className="hidden text-sm text-muted-foreground sm:inline">{email}</span>
+            <span className="hidden text-sm text-muted-foreground sm:inline">{doctor.email}</span>
             <button
               onClick={signOut}
               className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium transition-all hover:border-primary/40 hover:text-primary"
