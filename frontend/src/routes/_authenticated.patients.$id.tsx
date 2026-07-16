@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/lib/api";
 import {
   ArrowLeft,
   Plus,
@@ -64,70 +64,74 @@ function PatientDetail() {
 
   useEffect(() => {
     (async () => {
-      const [{ data: p, error: pe }, { data: m, error: me }] =
-        await Promise.all([
-          supabase.from("patients").select("*").eq("id", id).maybeSingle(),
-          supabase.from("medications").select("*").eq("patient_id", id).order("created_at"),
-        ]);
-      if (pe || me) { setError((pe || me)!.message); return; }
-      setPatient(p as Patient);
-      setMeds((m as Medication[]) ?? []);
+      try {
+        const data = await api.get(`/patients/${id}`);
+        setPatient(data);
+        setMeds(data.medicamentos || []);
+      } catch (err: any) {
+        setError(err.message);
+      }
     })();
   }, [id]);
 
   async function savePatient() {
     if (!patient) return;
     setSaving(true);
-    const { error } = await supabase
-      .from("patients")
-      .update({
+    try {
+      await api.put(`/patients/${patient.id}`, {
         full_name: patient.full_name,
         birth_date: patient.birth_date,
         sex: patient.sex,
         conditions: patient.conditions,
         notes: patient.notes,
-      })
-      .eq("id", patient.id);
-    setSaving(false);
-    if (error) setError(error.message);
-    else setEditing(false);
+      });
+      setEditing(false);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setSaving(false);
+    }
   }
 
   async function addMed(e: React.FormEvent) {
     e.preventDefault();
     if (!newMed.substance.trim()) return;
-    const { data: u } = await supabase.auth.getUser();
-    if (!u.user || !patient) return;
-    const { data, error } = await supabase
-      .from("medications")
-      .insert({
-        patient_id: patient.id,
-        doctor_id: u.user.id,
+    if (!patient) return;
+
+    try {
+      const addedMed = await api.post(`/patients/${patient.id}/medications`, {
         substance: newMed.substance.trim(),
         dose: newMed.dose || null,
         posology: newMed.posology || null,
         route: newMed.route || null,
         started_on: newMed.started_on || null,
-      })
-      .select("*")
-      .single();
-    if (error) { setError(error.message); return; }
-    setMeds((prev) => [...prev, data as Medication]);
-    setNewMed({ substance: "", dose: "", posology: "", route: "", started_on: "" });
+      });
+      setMeds((prev) => [...prev, addedMed]);
+      setNewMed({ substance: "", dose: "", posology: "", route: "", started_on: "" });
+    } catch (err: any) {
+      setError(err.message);
+    }
   }
 
   async function removeMed(mid: string) {
-    const { error } = await supabase.from("medications").delete().eq("id", mid);
-    if (error) { setError(error.message); return; }
-    setMeds((prev) => prev.filter((m) => m.id !== mid));
+    if (!patient) return;
+    try {
+      await api.delete(`/patients/${patient.id}/medications/${mid}`);
+      setMeds((prev) => prev.filter((m) => m.id !== mid));
+    } catch (err: any) {
+      setError(err.message);
+    }
   }
 
   async function deletePatient() {
     if (!patient) return;
     if (!confirm(`Excluir paciente ${patient.full_name}?`)) return;
-    const { error } = await supabase.from("patients").delete().eq("id", patient.id);
-    if (error) { setError(error.message); return; }
-    navigate({ to: "/patients" });
+    try {
+      await api.delete(`/patients/${patient.id}`);
+      navigate({ to: "/patients" });
+    } catch (err: any) {
+      setError(err.message);
+    }
   }
 
   if (error && !patient) {
