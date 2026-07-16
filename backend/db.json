@@ -4,14 +4,25 @@
       "id": "doc-demo-1",
       "nome": "Dr. Demonstração",
       "email": "demo@clinica.com",
-      "senha": "123",
-      "pacientes": []
+      "senha": "123456",
+      "pacientes": [
+        {
+          "id": "26600f49-7f42-48ce-808e-aae86c507798",
+          "full_name": "Filipe Magno Alves Paiva",
+          "birth_date": "1970-10-10",
+          "sex": "Masculino",
+          "conditions": "Sem condições",
+          "notes": "Sem observações",
+          "updated_at": "2026-07-16T23:54:30.224Z",
+          "medicamentos": []
+        }
+      ]
     },
     {
       "id": "doc-demo-2",
       "nome": "Dra. Exemplo",
       "email": "exemplo@clinica.com",
-      "senha": "123",
+      "senha": "123456",
       "pacientes": []
     }
   ]

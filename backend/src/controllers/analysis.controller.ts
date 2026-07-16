@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 // Carrega as interações em memória
-const interacoesPath = path.resolve(process.cwd(), "interacoes_medicamentosas.json");
+const interacoesPath = path.resolve(process.cwd(), "..", "interacoes_medicamentosas.json");
 let interacoesDB: any = [];
 
 try {
