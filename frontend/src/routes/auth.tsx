@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { api } from "@/lib/api";
 import { Pill } from "lucide-react";
-import illustration from "@/assets/auth-illustration.png";
+import illustration from "@/assets/auth-illustration.svg";
 
 export const Route = createFileRoute("/auth")({
   component: AuthPage,
