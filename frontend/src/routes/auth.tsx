@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/context/AuthContext";
+import { api } from "@/lib/api";
 import { Pill } from "lucide-react";
 import illustration from "@/assets/auth-illustration.png";
 
@@ -10,6 +11,8 @@ export const Route = createFileRoute("/auth")({
 
 function AuthPage() {
   const navigate = useNavigate();
+  const { doctor, setDoctor, isLoading } = useAuth();
+  
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,36 +20,10 @@ function AuthPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/patients", replace: true });
-    });
-  }, [navigate]);
-
-  function translateError(msg: string): string {
-    const m = msg.toLowerCase();
-    if (m.includes("password") && (m.includes("weak") || m.includes("easy to guess") || m.includes("pwned") || m.includes("compromised"))) {
-      return "Esta senha é conhecida por ser fraca e fácil de adivinhar. Escolha outra.";
+    if (!isLoading && doctor) {
+      navigate({ to: "/patients", replace: true });
     }
-    if (m.includes("user already registered") || m.includes("already been registered")) {
-      return "Este e-mail já está cadastrado.";
-    }
-    if (m.includes("invalid login credentials") || m.includes("invalid credentials")) {
-      return "E-mail ou senha inválidos.";
-    }
-    if (m.includes("email not confirmed")) return "E-mail ainda não confirmado.";
-    if (m.includes("password should be at least")) {
-      const match = msg.match(/(\d+)/);
-      return `A senha deve ter pelo menos ${match ? match[1] : 6} caracteres.`;
-    }
-    if (m.includes("unable to validate email") || m.includes("invalid email")) {
-      return "E-mail inválido.";
-    }
-    if (m.includes("rate limit") || m.includes("too many requests")) {
-      return "Muitas tentativas. Tente novamente em instantes.";
-    }
-    if (m.includes("network")) return "Falha de conexão. Verifique sua internet.";
-    return "Não foi possível concluir. Tente novamente.";
-  }
+  }, [isLoading, doctor, navigate]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -54,23 +31,23 @@ function AuthPage() {
     setLoading(true);
     try {
       if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: { emailRedirectTo: window.location.origin },
-        });
-        if (error) throw error;
+        // Usa a parte do email antes do @ como nome provisório
+        const nome = email.split("@")[0];
+        const user = await api.post("/auth/signup", { email, password, nome });
+        setDoctor(user);
       } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        const user = await api.post("/auth/login", { email, password });
+        setDoctor(user);
       }
       navigate({ to: "/patients", replace: true });
     } catch (err) {
-      setError(translateError(err instanceof Error ? err.message : String(err)));
+      setError(err instanceof Error ? err.message : String(err));
     } finally {
       setLoading(false);
     }
   }
+
+  if (isLoading) return null;
 
   return (
     <main className="grid min-h-screen grid-cols-1 lg:grid-cols-2">

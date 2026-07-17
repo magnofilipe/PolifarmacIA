@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/lib/api";
 import { Plus, User, ChevronRight, HelpCircle, X } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/patients/")({
@@ -60,13 +60,12 @@ function PatientsList() {
   const [showInfo, setShowInfo] = useState(false);
 
   useEffect(() => {
-    supabase
-      .from("patients")
-      .select("id, full_name, birth_date, sex, conditions, updated_at")
-      .order("updated_at", { ascending: false })
-      .then(({ data, error }) => {
-        if (error) setError(error.message);
-        else setPatients(data as Patient[]);
+    api.get("/patients")
+      .then((data) => {
+        setPatients(data as Patient[]);
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   }, []);
 

@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/lib/api";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/patients/new")({
@@ -22,30 +22,13 @@ function NewPatient() {
     setError(null);
     setLoading(true);
     try {
-      const { data: u, error: uErr } = await supabase.auth.getUser();
-      if (uErr || !u.user) {
-        console.error("[patients.new] sessão inválida", uErr);
-        setError("Sessão expirada. Faça login novamente.");
-        navigate({ to: "/auth", replace: true });
-        return;
-      }
-      const { data, error } = await supabase
-        .from("patients")
-        .insert({
-          doctor_id: u.user.id,
-          full_name: full_name.trim(),
-          birth_date: birth_date || null,
-          sex: sex || null,
-          conditions: conditions?.trim() || null,
-          notes: notes?.trim() || null,
-        })
-        .select("id")
-        .single();
-      if (error) {
-        console.error("[patients.new] insert error", error);
-        setError(error.message);
-        return;
-      }
+      const data = await api.post("/patients", {
+        full_name: full_name.trim(),
+        birth_date: birth_date || null,
+        sex: sex || null,
+        conditions: conditions?.trim() || null,
+        notes: notes?.trim() || null,
+      });
       navigate({ to: "/patients/$id", params: { id: data.id } });
     } catch (err) {
       console.error("[patients.new] unexpected", err);

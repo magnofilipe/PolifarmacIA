@@ -1,0 +1,3215 @@
+{
+  "metadata": {
+    "fonte": "Detecta Interações (IMSES/CRF-MG) - https://imses.crfmg.org.br/",
+    "fonte_dados": "Guia de Interações Medicamentosas validado (NEPeFaC/UFSJ, Ferreira & Baldoni, 2020) + página oficial",
+    "descricao": "Interações medicamentosas potencialmente graves de uso hospitalar, validadas pela Técnica de Delphi.",
+    "total_interacoes": 319,
+    "campos": {
+      "id": "identificador único da interação",
+      "par": "chave alfabética normalizada do par (para busca por dupla, independente da ordem)",
+      "medicamento_1": "primeiro medicamento (medicamento de origem no guia)",
+      "medicamento_2": "segundo medicamento",
+      "tipo_alerta": "sempre vazio - o site não expõe esse rótulo por interação (todas são graves)",
+      "efeito": "mecanismo ou efeito da interação",
+      "acao": "conduta categorizada: Ajustar a dose, Contraindicado, Evitar a associação, Geralmente evitar, Monitorizar de perto",
+      "recomendacao": "recomendação de manejo clínico"
+    },
+    "observacoes": [
+      "Base autoritativa: guia de validação oficial (2020) conferido contra amostras do site ao vivo.",
+      "AAS + Nimesulida consta no site mas não no guia PDF; foi incluída (acao vazia, conforme o site).",
+      "2 pares constam em duplicidade no guia-fonte com conteúdo distinto (Clopidogrel+Omeprazol; Diltiazem+Metoprolol) e foram preservados."
+    ]
+  },
+  "interacoes": [
+    {
+      "id": 1,
+      "par": "Carbamazepina + Diltiazem",
+      "medicamento_1": "Diltiazem",
+      "medicamento_2": "Carbamazepina",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de carbamazepina.",
+      "acao": "Ajustar a dose",
+      "recomendacao": "Ajustar dose carbamazepina, reduzindo a quantidade diária utilizada em aproximadamente 50%"
+    },
+    {
+      "id": 2,
+      "par": "Carbamazepina + Verapamil",
+      "medicamento_1": "Verapamil",
+      "medicamento_2": "Carbamazepina",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de carbamazepina.",
+      "acao": "Ajustar a dose",
+      "recomendacao": "Ajustar dose carbamazepina, reduzindo a quantidade diária utilizada em aproximadamente 50%"
+    },
+    {
+      "id": 3,
+      "par": "Amiodarona + Digoxina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Digoxina",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração sérica de digoxina em até 100%, resultando em intoxicação digitálica",
+      "acao": "Ajustar a dose",
+      "recomendacao": "Reduzir dose de digoxina de um terço a metade. Monitorizar níveis séricos de digoxina e fazer observação clínica sobre para avaliar intoxicação digitálica"
+    },
+    {
+      "id": 4,
+      "par": "Claritromicina + Metilprednisolona",
+      "medicamento_1": "Claritromicina",
+      "medicamento_2": "Metilprednisolona",
+      "tipo_alerta": "",
+      "efeito": "Aumento na concentração plasmática de metilprednisolona",
+      "acao": "Ajustar a dose",
+      "recomendacao": "Se o uso concomitante for necessário, reduzir em 50% a dose diária de metilprednisolona"
+    },
+    {
+      "id": 5,
+      "par": "Citalopram + Omeprazol",
+      "medicamento_1": "Omeprazol",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de citalopram com maior chance de prolongamento de intervalo QT",
+      "acao": "Ajustar a dose",
+      "recomendacao": "Não deve exceder 20 mg / dia de citalopram. Monitorizar possível hipocalemia e hipomagnesemia, e corrigir se necessário"
+    },
+    {
+      "id": 6,
+      "par": "Citalopram + Fluconazol",
+      "medicamento_1": "Fluconazol",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Aumento na concentração plasmática do citalopram",
+      "acao": "Ajustar a dose",
+      "recomendacao": "A dose de citalopram não deve exceder 20 mg / dia. Alternativas devem ser consideradas quando possível. Monitorizar hipocalemia ou hipomagnesemia"
+    },
+    {
+      "id": 7,
+      "par": "Anlodipino + Sinvastatina",
+      "medicamento_1": "Anlodipino",
+      "medicamento_2": "Sinvastatina",
+      "tipo_alerta": "",
+      "efeito": "Aumenta concentrações plasmáticas de sinvastatina, potencializando risco de miopatia",
+      "acao": "Ajustar a dose",
+      "recomendacao": "Não ultrapassar 20 mg/dia sinvastatina ou substituir terapia por rosuvastatina, pravastatina e fluvastatina"
+    },
+    {
+      "id": 8,
+      "par": "Amiodarona + Levofloxacino",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação, mas se for necessária a associação recomenda-se precaução e monitorização clínica"
+    },
+    {
+      "id": 9,
+      "par": "Ceftriazona + Gluconato de calcio",
+      "medicamento_1": "Ceftriazona",
+      "medicamento_2": "Gluconato de calcio",
+      "tipo_alerta": "",
+      "efeito": "Risco de precipitação do sal ceftriaxona-cálcio. Houve casos de reações fatais envolvendo a presença desses precipitados no pulmão e nos rins de recém-nascidos a termo e prematuros, bem como bebês com até 1 ano de idade",
+      "acao": "Contraindicado",
+      "recomendacao": "A ceftriaxona não deve ser misturada ou administrada simultaneamente com soluções intravenosas contendo cálcio, mesmo quando administrada através de diferentes vias de perfusão."
+    },
+    {
+      "id": 10,
+      "par": "Amiodarona + Ciprofloxacino",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Ciprofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Aumento de intervalo QT, que pode resultar em risco elevado de arritmias ventriculares",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação"
+    },
+    {
+      "id": 11,
+      "par": "Haloperidol + Metoclopramida",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Metoclopramida",
+      "tipo_alerta": "",
+      "efeito": "Aumento na frequência e na gravidade das reações extrapiramidais (reações distônicas agudas, discinesia tardia, acatisia, sintomas semelhantes ao Parkinson), devido a efeitos antidopaminérgicos aditivos",
+      "acao": "Contraindicado",
+      "recomendacao": "A metoclopramida não deve ser prescrita em combinação com outros agentes antidopaminérgicos. Verificar possibilidade de outro antimético, como domperidona e ondansetrona. Outra possibilidade é considerar os antipsicóticos atípicos, que causam menos eventos extrapiramidais, como clozapina e quetiapina."
+    },
+    {
+      "id": 12,
+      "par": "Azul de metileno + Citalopram",
+      "medicamento_1": "Azul de metileno",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de síndrome serotoninérgica",
+      "acao": "Contraindicado",
+      "recomendacao": "Não usar a associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa. Os medicamentos psiquiátricos serotoninérgicas devem ser interrompidos (1 a 2 semanas) antes do tratamento com azul de metileno, exceto a fluoxetina que devido a sua meia vida longa requer suspensão com até 5 semanas de antecedência. O tratamento com medicamentos serotoninérgicos pode ser retomado 24 horas após a última dose de azul de metileno. E em caso de síndrome vasoplégica e paciente em uso de algum inibidor de receptação de serotonina (ISRS), avaliar risco benefício do uso."
+    },
+    {
+      "id": 13,
+      "par": "Azul de metileno + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Reação excitatória e depressiva. Os sintomas da reação excitatória podem incluir agitação, dor de cabeça, diaforese, hiperpirexia, vermelhidão, tremores, mioclonia, rigidez, tremor, diarreia, hipertensão, taquicardia, crises epilépticas, coma e morte",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 14,
+      "par": "Azul de metileno + Carbamazepina",
+      "medicamento_1": "Carbamazepina",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Risco de náuseas, vômitos, rubor, tontura, tremor, mioclonia, rigidez, diaforese, hipertermia instabilidade, crises hipertensivas, coagulação intravascular disseminada, crises epilépticas, coma e morte.",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 15,
+      "par": "Clorpromazina + Metoclopramida",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Metoclopramida",
+      "tipo_alerta": "",
+      "efeito": "Aumento na frequência e na gravidade das reações extrapiramidais (reações distônicas agudas, discinesia tardia, acatisia, sintomas semelhantes ao Parkinson), devido a efeitos antidopaminérgicos aditivos",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. A metoclopramida não deve ser prescrita em combinação com outros agentes antidopaminérgicos. Verificar possibilidade de outro antimético, como domperidona e ondansetrona. Outra possibilidade é considerar os antipsicóticos atípicos, que causam menos eventos extrapiramidais, como clozapina e quetiapina."
+    },
+    {
+      "id": 16,
+      "par": "Claritromicina + Nimodipina",
+      "medicamento_1": "Claritromicina",
+      "medicamento_2": "Nimodipina",
+      "tipo_alerta": "",
+      "efeito": "Aumento na concentração plasmática da nimodipina e maior efeito sobre a redução da pressão arterial",
+      "acao": "Contraindicado",
+      "recomendacao": "Não usar esta associação devido ao risco de hipotensão significativa. Se for imprescindível reduza a dose diária de nimodipino"
+    },
+    {
+      "id": 17,
+      "par": "Cloreto de potassio (dragea) + Clorpromazina",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Cloreto de potassio (dragea)",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio",
+      "acao": "Contraindicado",
+      "recomendacao": "Formulações orais sólidas de cloreto de potássio é considerado contraindicado para pacientes que usam anticolinérgicos. Formulações líquidas de cloreto de potássio devem ser consideradas. Monitorizar: lesão gastrointestinal alta, como vômitos graves, dor abdominal, distensão e sangramento gastrointestinal"
+    },
+    {
+      "id": 18,
+      "par": "Amitriptilina + Cloreto de potassio (dragea)",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Cloreto de potassio (dragea)",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio",
+      "acao": "Contraindicado",
+      "recomendacao": "Formulações orais sólidas de cloreto de potássio é considerado contraindicado para pacientes que usam anticolinérgicos. Formulações líquidas de cloreto de potássio devem ser consideradas. Monitorizar: lesão gastrointestinal alta, como vômitos graves, dor abdominal, distensão e sangramento gastrointestinal"
+    },
+    {
+      "id": 19,
+      "par": "Atropina + Cloreto de potassio (dragea)",
+      "medicamento_1": "Atropina",
+      "medicamento_2": "Cloreto de potassio (dragea)",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio",
+      "acao": "Contraindicado",
+      "recomendacao": "Formulações orais sólidas de cloreto de potássio é considerado contraindicado para pacientes que usam anticolinérgicos. Formulações líquidas de cloreto de potássio devem ser consideradas. Monitorizar: lesão gastrointestinal alta, como vômitos graves, dor abdominal, distensão e sangramento gastrointestinal"
+    },
+    {
+      "id": 20,
+      "par": "Desmopressina + Furosemida",
+      "medicamento_1": "Furosemida",
+      "medicamento_2": "Desmopressina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 21,
+      "par": "Desmopressina + Prednisolona",
+      "medicamento_1": "Prednisolona",
+      "medicamento_2": "Desmopressina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. O tratamento com desmopressina pode ser iniciado ou retomado somente 5 meias-vidas após a interrupção do glicocorticóide. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 22,
+      "par": "Desmopressina + Dexametasona",
+      "medicamento_1": "Dexametasona",
+      "medicamento_2": "Desmopressina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. O tratamento com desmopressina pode ser iniciado ou retomado somente 5 meias-vidas após a interrupção do glicocorticóide. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 23,
+      "par": "Desmopressina + Hidrocortisona",
+      "medicamento_1": "Hidrocortisona",
+      "medicamento_2": "Desmopressina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. O tratamento com desmopressina pode ser iniciado ou retomado somente 5 meias-vidas após a interrupção do glicocorticóide. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 24,
+      "par": "Desmopressina + Metilprednisolona",
+      "medicamento_1": "Metilprednisolona",
+      "medicamento_2": "Desmopressina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. O tratamento com desmopressina pode ser iniciado ou retomado somente 5 meias-vidas após a interrupção do glicocorticóide. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 25,
+      "par": "Desmopressina + Prednisona",
+      "medicamento_1": "Prednisona",
+      "medicamento_2": "Desmopressina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. O tratamento com desmopressina pode ser iniciado ou retomado somente 5 meias-vidas após a interrupção do glicocorticoide. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 26,
+      "par": "Biperideno + Cloreto de potassio",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Biperideno",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio.",
+      "acao": "Contraindicado",
+      "recomendacao": "Formulações orais sólidas de cloreto de potássio é considerado contraindicado para pacientes que usam anticolinérgicos. Formulações líquidas de cloreto de potássio devem ser consideradas. Monitorizar: lesão gastrointestinal alta, como vômitos graves, dor abdominal, distensão e sangramento gastrointestinal"
+    },
+    {
+      "id": 27,
+      "par": "Cloreto de potassio + Escopolamina",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Escopolamina",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio.",
+      "acao": "Contraindicado",
+      "recomendacao": "Formulações orais sólidas de cloreto de potássio é considerado contraindicado para pacientes que usam anticolinérgicos. Formulações líquidas de cloreto de potássio devem ser consideradas. Monitorizar: lesão gastrointestinal alta, como vômitos graves, dor abdominal, distensão e sangramento gastrointestinal"
+    },
+    {
+      "id": 28,
+      "par": "Azul de metileno + Metildopa",
+      "medicamento_1": "Metildopa",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Perda do controle da pressão arterial e / ou sinais de estimulação central, como hiperexcitabilidade e alucinações",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. Devem decorrer pelo menos 14 dias entre a descontinuação da terapia com azul de metileno e o início do tratamento com metildopa. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 29,
+      "par": "Amitriptilina + Azul de metileno",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de síndrome serotoninérgica",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. Os medicamentos com efeitos serotoninérgicos devem ser interrompidos 1 a 2 semanas (ou seja, 4 a 5 meias-vidas) antes do tratamento com azul de metileno. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 30,
+      "par": "Azul de metileno + Dopamina",
+      "medicamento_1": "Dopamina",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Reações hipertensivas graves e hiperpirexia",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa"
+    },
+    {
+      "id": 31,
+      "par": "Azul de metileno + Fentanil",
+      "medicamento_1": "Fentanil",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Parece haver dois tipos de interação, uma excitatória e uma depressiva. Os sintomas da reação excitatória podem incluir agitação, dor de cabeça, diaforese, hiperpirexia, rubor, tremores, mioclonia, rigidez, tremor, diarreia, hipertensão, taquicardia, crises epilépticas e coma",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa"
+    },
+    {
+      "id": 32,
+      "par": "Azul de metileno + Fluoxetina",
+      "medicamento_1": "Fluoxetina",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de síndrome serotoninérgica",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. Os medicamentos com efeitos serotoninérgicos devem ser interrompidos 1 a 2 semanas antes do tratamento com azul de metileno"
+    },
+    {
+      "id": 33,
+      "par": "Azul de metileno + Metaraminol",
+      "medicamento_1": "Metaraminol",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Pode precipitar reações hipertensivas graves e hiperpirexia",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 34,
+      "par": "Azul de metileno + Fenilefrina",
+      "medicamento_1": "Fenilefrina",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Pode precipitar reações hipertensivas graves e hiperpirexia",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 35,
+      "par": "Metoclopramida + Risperidona",
+      "medicamento_1": "Metoclopramida",
+      "medicamento_2": "Risperidona",
+      "tipo_alerta": "",
+      "efeito": "Aumento na frequência e a gravidade das reações extrapiramidais (ou seja, reações distônicas agudas, discinesia tardia, acatisia, sintomas semelhantes ao Parkinson)",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação"
+    },
+    {
+      "id": 36,
+      "par": "Betametasona + Desmopressina",
+      "medicamento_1": "Desmopressina",
+      "medicamento_2": "Betametasona",
+      "tipo_alerta": "",
+      "efeito": "Risco de hiponatremia grave",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. O tratamento com desmopressina pode ser iniciado ou retomado somente após 5 meias-vidas após a interrupção do glicocorticóide. Se imprescindível associar, deve-se monitorizar níveis de sódio e repor esse eletrólito."
+    },
+    {
+      "id": 37,
+      "par": "Cloreto de potassio + Dexclorfeniramina",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Dexclorfeniramina",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio. O mecanismo proposto envolve aumento do tempo de trânsito gastrointestinal",
+      "acao": "Contraindicado",
+      "recomendacao": "Formações líquidas de cloreto de potássio devem ser consideradas. A terapia deve ser interrompida se o paciente apresentar sintomas de lesão gastrointestinal alta"
+    },
+    {
+      "id": 38,
+      "par": "Metoclopramida + Prometazina",
+      "medicamento_1": "Metoclopramida",
+      "medicamento_2": "Prometazina",
+      "tipo_alerta": "",
+      "efeito": "Aumento na frequência e na gravidade das reações extrapiramidais (reações distônicas agudas, discinesia tardia, acatisia, sintomas semelhantes ao Parkinson), devido a efeitos antidopaminérgicos aditivos",
+      "acao": "Contraindicado",
+      "recomendacao": "A metoclopramida não deve ser prescrita em combinação com outros agentes antidopaminérgicos"
+    },
+    {
+      "id": 39,
+      "par": "Cloreto de potassio + Prometazina",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Prometazina",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio. O mecanismo proposto envolve aumento do tempo de trânsito gastrointestinal",
+      "acao": "Contraindicado",
+      "recomendacao": "Formações líquidas de cloreto de potássio devem ser consideradas. A terapia deve ser interrompida se o paciente apresentar sintomas de lesão gastrointestinal alta (vômito, dor, distensão, sangramento)"
+    },
+    {
+      "id": 40,
+      "par": "Cloreto de potassio + Dimenidrato",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Dimenidrato",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio. O mecanismo proposto envolve aumento do tempo de trânsito gastrointestinal",
+      "acao": "Contraindicado",
+      "recomendacao": "Formações líquidas de cloreto de potássio devem ser consideradas. A terapia deve ser interrompida se o paciente apresentar sintomas de lesão gastrointestinal alta (vômito, dor, distensão, sangramento)"
+    },
+    {
+      "id": 41,
+      "par": "Cloreto de potassio + Hidroxizina",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Hidroxizina",
+      "tipo_alerta": "",
+      "efeito": "Risco de lesão gastrointestinal superior associada a formulações sólidas orais de cloreto de potássio. O mecanismo proposto envolve aumento do tempo de trânsito gastrointestinal",
+      "acao": "Contraindicado",
+      "recomendacao": "Uma formulação líquida de cloreto de potássio deve ser considerada. A terapia deve ser interrompida se o paciente apresentar sintomas de lesão gastrointestinal alta (vômito, dor, distensão, sangramento)"
+    },
+    {
+      "id": 42,
+      "par": "Clopidogrel + Omeprazol",
+      "medicamento_1": "Omeprazol",
+      "medicamento_2": "Clopidogrel",
+      "tipo_alerta": "",
+      "efeito": "O omeprazol inibe a CYP2CP19 que metaboliza o pró-fármaco clopidogrel, e isso reduz o efeito cardioprotetor do clopidogrel.",
+      "acao": "Contraindicado",
+      "recomendacao": "Ver possibilidade de desprescrição do omeprazol. Se for necessário um inibidor de bomba de prótons, substituir por pantoprazol"
+    },
+    {
+      "id": 43,
+      "par": "Amiodarona + Norfloxacino",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Norfloxacino",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita.",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. Certas quinolonas não devem ser usadas com agentes antiarrítmicos classe IA e de classe III"
+    },
+    {
+      "id": 44,
+      "par": "Azul de metileno + Tramadol",
+      "medicamento_1": "Azul de metileno",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de síndrome serotoninérgica",
+      "acao": "Contraindicado",
+      "recomendacao": "Não associar. Os medicamentos com efeitos serotoninérgicos devem ser interrompidos 1 a 2 semanas antes do tratamento com azul de metileno. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa"
+    },
+    {
+      "id": 45,
+      "par": "Citalopram + Fluoxetina",
+      "medicamento_1": "Fluoxetina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita. Além de risco de síndrome serotoninérgica",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar associação"
+    },
+    {
+      "id": 46,
+      "par": "AAS + Cetorolaco",
+      "medicamento_1": "AAS",
+      "medicamento_2": "Cetorolaco",
+      "tipo_alerta": "",
+      "efeito": "Potencializa efeitos adversos dos AINEs",
+      "acao": "Contraindicado",
+      "recomendacao": "Evitar uso simultâneo"
+    },
+    {
+      "id": 47,
+      "par": "Amiodarona + Haloperidol",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Haloperidol",
+      "tipo_alerta": "",
+      "efeito": "Aumento de intervalo QT, que pode resultar em risco elevado de arritmias ventriculares",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação. Se necessário associar monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 48,
+      "par": "Cetoprofeno + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Cetoprofeno",
+      "tipo_alerta": "",
+      "efeito": "(AINEs) podem potenciar o efeito hipoprotrombinêmico e o risco de hemorragia",
+      "acao": "Evitar a associação",
+      "recomendacao": "Os AINEs devem ser administrados com anticoagulantes orais somente se o benefício superar o risco. Opção paracetamol. Monitorizar RNI e sinais e sintomas de sangramento."
+    },
+    {
+      "id": 49,
+      "par": "Amiodarona + Clorpromazina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Clorpromazina",
+      "tipo_alerta": "",
+      "efeito": "Podem causar prolongamento do intervalo QT relacionado à dose.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que se espere que os benefícios superem os riscos. Caso a associação seja necessária monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 50,
+      "par": "Amiodarona + Furosemida",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Furosemida",
+      "tipo_alerta": "",
+      "efeito": "A coadministração com agentes que podem produzir hipocalemia e / ou hipomagnesemia pode resultar em risco elevado de arritmias ventriculares, incluindo taquicardia ventricular e torsades de pointes potencial arritmogênico aditivo.",
+      "acao": "Evitar a associação",
+      "recomendacao": "A coadministração de amiodarona com medicamentos que podem causar distúrbios de potássio e / ou magnésio deve ser evitada. Monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 51,
+      "par": "Furosemida + Gentamicina",
+      "medicamento_1": "Gentamicina",
+      "medicamento_2": "Furosemida",
+      "tipo_alerta": "",
+      "efeito": "Aumento de risco de nefrotoxicidade",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar o uso em associação, sobretudo por via intravenosa. Monitorizar nefrotoxicidade."
+    },
+    {
+      "id": 52,
+      "par": "Amiodarona + Fluconazol",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Fluconazol",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de amiodarona",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, se possível, dado ao potencial de eventos cardíacos adversos sérios e potencialmente fatais associados ao aumento dos níveis plasmáticos de amiodarona"
+    },
+    {
+      "id": 53,
+      "par": "Amicacina + Furosemida",
+      "medicamento_1": "Furosemida",
+      "medicamento_2": "Amicacina",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de nefrotoxicidade",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação. Caso não seja possível, monitorizar nefrotoxicidade."
+    },
+    {
+      "id": 54,
+      "par": "Amiodarona + Azitromicina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Azitromicina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação, a menos que se espere que os benefícios superem os riscos. Caso a associação seja necessária monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 55,
+      "par": "Amiodarona + Claritromicina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Claritromicina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que se espere que os benefícios superem os riscos. Caso a associação seja necessária monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 56,
+      "par": "Amiodarona + Amitriptilina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Amitriptilina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que se espere que os benefícios superem os riscos. Caso a associação seja necessária monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 57,
+      "par": "Amiodarona + Fluoxetina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Fluoxetina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT, que pode resultar em efeitos aditivos e aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que se espere que os benefícios superem os riscos. Caso a associação seja necessária monitorizar eletrocardiograma, hipocalemia e hipomagnesemia."
+    },
+    {
+      "id": 58,
+      "par": "Carbamazepina + Claritromicina",
+      "medicamento_1": "Carbamazepina",
+      "medicamento_2": "Claritromicina",
+      "tipo_alerta": "",
+      "efeito": "Aumento dos níveis séricos de carbamazepina e pode, também, ocorrer redução do efeito de antimicrobianos macrólideos",
+      "acao": "Evitar a associação",
+      "recomendacao": "Recomenda terapia microbiana alternativa para pacientes com carbamazepina, como a azitromicina. Se essa combinação tiver que ser usada, os níveis de carbamazepina devem ser monitorados e o paciente deve ser cuidadosamente observado quanto a sinais de toxicidade por carbamazepina (diplopia e etc). Avaliar possibilidade de substituir claritromicina por azitromicina."
+    },
+    {
+      "id": 59,
+      "par": "Metildopa + Propranolol",
+      "medicamento_1": "Propranolol",
+      "medicamento_2": "Metildopa",
+      "tipo_alerta": "",
+      "efeito": "Pode ocorrer picos graves de hipertensão",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar essa combinação. Se realmente for necessária, monitorizar a pressão arterial, principalmente quando descontinuar tratamento com metildopa."
+    },
+    {
+      "id": 60,
+      "par": "Amitriptilina + Clonidina",
+      "medicamento_1": "Clonidina",
+      "medicamento_2": "Amitriptilina",
+      "tipo_alerta": "",
+      "efeito": "Elevações da pressão arterial potencialmente fatais",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso não seja possível aferir a pressão arterial de perto, especialmente durante as primeiras semanas de uso. Quando a clonidina, a amitriptilina ou ambos são descontinuados, recomenda-se a retirada gradual para evitar flutuações bruscas da pressão arterial"
+    },
+    {
+      "id": 61,
+      "par": "Diazepam + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Diazepam",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que as opções alternativas de tratamento sejam inadequadas. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 62,
+      "par": "Clonazepam + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Clonazepam",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que as opções alternativas de tratamento sejam inadequadas. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 63,
+      "par": "Amitriptilina + Dobutamina",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Dobutamina",
+      "tipo_alerta": "",
+      "efeito": "Aumento acentuado da resposta pressora",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, exceto em casos de emergência (por exemplo, tratamento de anafilaxia). Se o uso concomitante for necessário, a dose inicial e a taxa de administração da dobutamina deve reduzidas. Monitorizar o estado cardiovascular, incluindo a pressão arterial"
+    },
+    {
+      "id": 64,
+      "par": "Fentanil + Haloperidol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 65,
+      "par": "Fentanil + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 66,
+      "par": "Clorpromazina + Fentanil",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 67,
+      "par": "Diazepam + Fentanil",
+      "medicamento_1": "Diazepam",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. O paciente deve ser monitorado de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 68,
+      "par": "Clonazepam + Fentanil",
+      "medicamento_1": "Clonazepam",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. O paciente deve ser monitorado de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 69,
+      "par": "Amitriptilina + Fluoxetina",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Fluoxetina",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração de amitriptilina e risco de síndrome serotoninérgica",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação. Caso não seja possível, monitorizar sinais e sintomas de síndrome serotoninérgica"
+    },
+    {
+      "id": 70,
+      "par": "Amiodarona + Hidroclorotiazida",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Hidroclorotiazida",
+      "tipo_alerta": "",
+      "efeito": "Risco elevado de arritmias ventriculares",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 71,
+      "par": "Amiodarona + Hidrocortisona",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Hidrocortisona",
+      "tipo_alerta": "",
+      "efeito": "Risco elevado de arritmias ventriculares",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 72,
+      "par": "Amiodarona + Prometazina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Prometazina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 73,
+      "par": "Amiodarona + Ondansetrona",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Ondansetrona",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 74,
+      "par": "Amiodarona + Hidroxizina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Hidroxizina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 75,
+      "par": "Amiodarona + Risperidona",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Risperidona",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 76,
+      "par": "Amiodarona + Sevoflurano",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Sevoflurano",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 77,
+      "par": "Amiodarona + Tramadol",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 78,
+      "par": "Amiodarona + Citalopram",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Caso não seja possível, monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 40 mg / dia"
+    },
+    {
+      "id": 79,
+      "par": "Aminofilina + Atenolol",
+      "medicamento_1": "Atenolol",
+      "medicamento_2": "Aminofilina",
+      "tipo_alerta": "",
+      "efeito": "Os efeitos farmacológicos das teofilinas e betabloqueadoreses são opostos. Doses não seletivas (> 50 mg/dia de atenolol) e altas de betabloqueadores cardiosseletivos podem causar broncoespasmo grave ou fatal por oposição à broncodilatação induzida pela teofilina.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Betabloqueadores não seletivos, orais e oftálmicos são considerados contraindicados em pacientes com doenças broncoespásticas (asma e DPOC). Os betabloqueadores cardiosseletivos devem ser evitados ou usados com extrema cautela se não houver outras alternativas"
+    },
+    {
+      "id": 80,
+      "par": "Captopril + Losartana",
+      "medicamento_1": "Captopril",
+      "medicamento_2": "Losartana",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Evitar a associação",
+      "recomendacao": "O duplo bloqueio do sistema renina-angiotensina-aldosterona não é recomendado, especialmente em pacientes com nefropatia diabética. A maioria dos pacientes que recebem a combinação não obtém nenhum benefício adicional em comparação com a monoterapia. Mas caso opte por associar, monitorizar níveis de potássio e creatinina sérica"
+    },
+    {
+      "id": 81,
+      "par": "Aminofilina + Ciprofloxacino",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Aminofilina",
+      "tipo_alerta": "",
+      "efeito": "Aumento significativo da concentração sérica de teofilina e do risco de toxicidade, pelo fato do ciprofloxacino inibir o metabolismo da teofilina através do CYP450 1A2",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se a coadministração for necessária, a dose diária de teofilina deve ser reduzida. A resposta farmacológica e os níveis séricos devem ser monitorizados de perto"
+    },
+    {
+      "id": 82,
+      "par": "Enalapril + Losartana",
+      "medicamento_1": "Enalapril",
+      "medicamento_2": "Losartana",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Evitar a associação",
+      "recomendacao": "O duplo bloqueio do sistema renina-angiotensina-aldosterona não é recomendado, especialmente em pacientes com nefropatia diabética. A maioria dos pacientes que recebem a combinação não obtém nenhum benefício adicional em comparação com a monoterapia. Mas caso opte por associar, monitorizar níveis de potássio e creatinina sérica"
+    },
+    {
+      "id": 83,
+      "par": "Gentamicina + Pancuronio",
+      "medicamento_1": "Gentamicina",
+      "medicamento_2": "Pancuronio",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada. Os aminoglicosídeos inibem a liberação de acetilcolina nas junções neuromusculares, interferindo no influxo de cálcio.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar o uso de gentamicina durante e imediatamente após a cirurgia em que os bloqueadores neuromusculares foram empregados. Se usados, os sinais vitais devem ser monitorados e os ajustes de doses devem ser realizados conforme necessidade clínica"
+    },
+    {
+      "id": 84,
+      "par": "Gentamicina + Succinilcolina",
+      "medicamento_1": "Gentamicina",
+      "medicamento_2": "Succinilcolina",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada. Os aminoglicosídeos inibem a liberação de acetilcolina nas junções neuromusculares, interferindo no influxo de cálcio.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar o uso de gentamicina durante e imediatamente após a cirurgia em que os bloqueadores neuromusculares foram empregados. Se usados, os sinais vitais devem ser monitorados e os ajustes de doses devem ser realizados conforme necessidade clínica. O tratamento com anticolinesterases e cálcio pode nem sempre ser efetivo na reversão do bloqueio neuromuscular causado por esses agentes"
+    },
+    {
+      "id": 85,
+      "par": "Cisatracurio + Gentamicina",
+      "medicamento_1": "Gentamicina",
+      "medicamento_2": "Cisatracurio",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada, devido ao feito dos aminoglicosídeos de bloquear atividade neuromuscular, que pode ser potencializado com o cisatracurcio",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar o uso de gentamicina durante e imediatamente após a cirurgia em que os bloqueadores neuromusculares foram empregados. Se usados, os sinais vitais devem ser monitorados e os ajustes de doses devem ser realizados conforme necessidade clínica"
+    },
+    {
+      "id": 86,
+      "par": "Fenobarbital + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Fenobarbital",
+      "tipo_alerta": "",
+      "efeito": "Redução do efeito anticoagulante com diminuição do RNI",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, se não for possível aumentar dose de varfarina em 50%, monitorizar clínica e RNI para evitar tromboembolismo, principalmente quando iniciar fenobarbital"
+    },
+    {
+      "id": 87,
+      "par": "Tiopental + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Tiopental",
+      "tipo_alerta": "",
+      "efeito": "Redução do efeito anticoagulante com diminuição do RNI",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, se não for possível aumentar dose de varfarina em 50%, monitorizar clínica e RNI para evitar tromboembolismo, principalmente quando iniciar tiopental"
+    },
+    {
+      "id": 88,
+      "par": "Diclofenaco + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Diclofenaco",
+      "tipo_alerta": "",
+      "efeito": "Aumento do efeito hipoprotrombinêmico e do risco de hemorragia",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação, se não for possível deve-se monitor RNI, sinais e sintomas de sangramento e reduzir dose da varfarina após o início de uso do AINE"
+    },
+    {
+      "id": 89,
+      "par": "Haloperidol + Morfina",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Morfina",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. O paciente deve ser monitorado de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 90,
+      "par": "Haloperidol + Remifentanila",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário"
+    },
+    {
+      "id": 91,
+      "par": "Citalopram + Haloperidol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 92,
+      "par": "Cetoprofeno + Enoxaparina",
+      "medicamento_1": "Cetoprofeno",
+      "medicamento_2": "Enoxaparina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hematoma epidural ou espinhal em pacientes que recebem anestesia neuroaxial ou punção subaracnóidea, o que pode a paralisia permanente ou a longo prazo",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação. Se não for possível: fazer observação clínica e laboratorial rigorosa para complicações hemorrágicas"
+    },
+    {
+      "id": 93,
+      "par": "Ciprofloxacino + Citalopram",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg /dia"
+    },
+    {
+      "id": 94,
+      "par": "Albuterol + Propranolol",
+      "medicamento_1": "Propranolol",
+      "medicamento_2": "Albuterol",
+      "tipo_alerta": "",
+      "efeito": "Os betabloqueadores podem antagonizar os efeitos dos broncodilatadores adrenérgicos beta-2 e precipitar broncoespasmo agudo, com risco de vida em pacientes com asma ou outras doenças obstrutivas das vias aéreas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária, usar bloqueador beta cardiosseletivo. Os betabloqueadores não seletivos são contraindicados em pacientes com doença obstrutiva das vias aéreas"
+    },
+    {
+      "id": 95,
+      "par": "Aminofilina + Propranolol",
+      "medicamento_1": "Propranolol",
+      "medicamento_2": "Aminofilina",
+      "tipo_alerta": "",
+      "efeito": "Os efeitos farmacológicos das teofilinas e betabloqueadores são opostos. Doses não seletivas (> 50 mg/dia de atenolol) e altas de betabloqueadores cardiosseletivos podem causar broncoespasmo grave ou fatal por oposição à broncodilatação induzida pela aminofilina.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Betabloqueadores não seletivos, orais e oftálmicos são considerados contraindicados em pacientes com doenças broncoespásticas (asma e DPOC). Os betabloqueadores cardiosseletivos devem ser evitados ou usados com extrema cautela se não houver outras alternativas"
+    },
+    {
+      "id": 96,
+      "par": "Citalopram + Levofloxacino",
+      "medicamento_1": "Levofloxacino",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 97,
+      "par": "Citalopram + Sevoflurano",
+      "medicamento_1": "Sevoflurano",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20/dia"
+    },
+    {
+      "id": 98,
+      "par": "Citalopram + Tramadol",
+      "medicamento_1": "Tramadol",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20/dia"
+    },
+    {
+      "id": 99,
+      "par": "Citalopram + Risperidona",
+      "medicamento_1": "Risperidona",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20/dia"
+    },
+    {
+      "id": 100,
+      "par": "Citalopram + Hidroxizina",
+      "medicamento_1": "Hidroxizina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": ""
+    },
+    {
+      "id": 101,
+      "par": "Citalopram + Prometazina",
+      "medicamento_1": "Prometazina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20/dia"
+    },
+    {
+      "id": 102,
+      "par": "Amitriptilina + Citalopram",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita. Além de risco de síndrome serotoninérgica",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 103,
+      "par": "Citalopram + Norfloxacino",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 104,
+      "par": "Citalopram + Claritromicina",
+      "medicamento_1": "Claritromicina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 105,
+      "par": "Azitromicina + Citalopram",
+      "medicamento_1": "Azitromicina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 106,
+      "par": "Citalopram + Clorpromazina",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 107,
+      "par": "Citalopram + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante recomenda-se monitorizar eletrocardiograma, hipomagnesemia e hipocalemia. Não exceder a dose do citalopram em 20 mg/dia"
+    },
+    {
+      "id": 108,
+      "par": "Metadona + Morfina",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Morfina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que as opções alternativas de tratamento sejam inadequadas. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 109,
+      "par": "Fenobarbital + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Fenobarbital",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte. Além disso, o fenobarbital induz o metabolismo hepático de opióides, reduzindo sua concentração plasmática",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que as opções alternativas de tratamento sejam inadequadas. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 110,
+      "par": "Hidroxizina + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Hidroxizina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, a menos que as opções alternativas de tratamento sejam inadequadas. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 111,
+      "par": "Metadona + Tramadol",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Sedação profunda, depressão respiratória, coma e morte. O risco de hipotensão e convulsões também pode ser aumentado. Em pacientes que foram previamente dependentes ou cronicamente usando opioides, o tramadol pode reiniciar a dependência física ou precipitar sintomas de abstinência. Prolongamento do intervalo QT pode resultar em arritmias ventriculares, incluindo torsades de pointes e morte súbita.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dosagem e a duração de cada medicamento devem ser limitadas ao mínimo. Monitorizar: crises epilépticas, depressão respiratória e sedação. O tramadol é contraindicado em pacientes com intoxicação aguda por opióides. Deve ter-se especial cuidado em doentes com suspeita de risco aumentado de torsades de pointes."
+    },
+    {
+      "id": 112,
+      "par": "Remifentanila + Tramadol",
+      "medicamento_1": "Tramadol",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, crises epilépticas, sedação profunda, depressão respiratória, coma e morte. Em pacientes que foram previamente dependentes de opioides, o tramadol pode reiniciar a dependência física ou precipitar sintomas de abstinência.",
+      "acao": "Evitar a associação",
+      "recomendacao": "O uso concomitante de tramadol com outros opioides deve ser geralmente evitado. Se for necessária, a dosagem e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Monitorizar: crises epilépticas, depressão respiratória e sedação"
+    },
+    {
+      "id": 113,
+      "par": "Remifentanila + Risperidona",
+      "medicamento_1": "Risperidona",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário, Monitorizar sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 114,
+      "par": "Risperidona + Tramadol",
+      "medicamento_1": "Risperidona",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário, Monitorizar sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 115,
+      "par": "Clopidogrel + Enoxaparina",
+      "medicamento_1": "Enoxaparina",
+      "medicamento_2": "Clopidogrel",
+      "tipo_alerta": "",
+      "efeito": "Risco de complicações hemorrágicas. Em pacientes que recebem anestesia neuroaxial ou punção subaracnóidea, o risco de desenvolver um hematoma epidural ou espinhal também pode ser aumentado",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, recomenda-se uma observação clínica e laboratorial próxima para complicações hemorrágicas"
+    },
+    {
+      "id": 116,
+      "par": "Azul de metileno + Remifentanila",
+      "medicamento_1": "Azul de metileno",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Crises de ansiedade, confusão, hipotensão, depressão respiratória, cianose e coma. O uso concomitante também pode causar excitação e hipertensão do SNC através de seus respectivos efeitos sobre as catecolaminas.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa."
+    },
+    {
+      "id": 117,
+      "par": "Hidroxizina + Remifentanila",
+      "medicamento_1": "Hidroxizina",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária, a dosagem e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Monitorizar: sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 118,
+      "par": "Hidroxizina + Tramadol",
+      "medicamento_1": "Hidroxizina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária, a dosagem e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Monitorizar: sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 119,
+      "par": "Fluconazol + Midazolam",
+      "medicamento_1": "Fluconazol",
+      "medicamento_2": "Midazolam",
+      "tipo_alerta": "",
+      "efeito": "Aumento na concentração plasmática do midazolam",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se associação for necessária, monitorar eventos relacionados à depresssão do SNC e reduzir dose de midazolam, caso necessário."
+    },
+    {
+      "id": 120,
+      "par": "Clorpromazina + Morfina",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Morfina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 121,
+      "par": "Diazepam + Morfina",
+      "medicamento_1": "Diazepam",
+      "medicamento_2": "Morfina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 122,
+      "par": "Clonazepam + Morfina",
+      "medicamento_1": "Clonazepam",
+      "medicamento_2": "Morfina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 123,
+      "par": "Fentanila + Morfina",
+      "medicamento_1": "Fentanila",
+      "medicamento_2": "Morfina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário. Os pacientes devem ser monitorados de perto quanto a sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 124,
+      "par": "Furosemida + Neomicina",
+      "medicamento_1": "Furosemida",
+      "medicamento_2": "Neomicina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de oto ou nefrotoxicidade. O risco pode ser maior com altas doses, pacientes com insuficiência renal preexistente, idade avançada e desidratação",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária a coadministração deve-se realizar testes de função renal e testes vestibulares e audiométricos"
+    },
+    {
+      "id": 125,
+      "par": "Amitriptilina + Noradrenalina",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Noradrenalina",
+      "tipo_alerta": "",
+      "efeito": "Pode acentuar a resposta pressórica",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, exceto em casos de emergência (por exemplo, tratamento de anafilaxia). Se necessário o uso concomitante, a dose inicial e a taxa de administração do simpatomimético devem ser reduzidas e função cardíaca deve ser monitorizada"
+    },
+    {
+      "id": 126,
+      "par": "Isoflurano + Noradrenalina",
+      "medicamento_1": "Isoflurano",
+      "medicamento_2": "Noradrenalina",
+      "tipo_alerta": "",
+      "efeito": "Irritabilidade ventricular, arritmias cardíacas graves ou morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se necessário, recomenda-se doses baixas de noradrenalina e monitorização do estado hemodinâmico do paciente"
+    },
+    {
+      "id": 127,
+      "par": "Amicacina + Pancuronio",
+      "medicamento_1": "Amicacina",
+      "medicamento_2": "Pancuronio",
+      "tipo_alerta": "",
+      "efeito": "Depressão respiratória grave e / ou prolongada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associar, caso necessária a associação deve-se monitorizar os sinais vitais e ajustar as doses conforme necessidade clínica"
+    },
+    {
+      "id": 128,
+      "par": "Neomicina + Pancuronio",
+      "medicamento_1": "Neomicina",
+      "medicamento_2": "Pancuronio",
+      "tipo_alerta": "",
+      "efeito": "Depressão respiratória grave e / ou prolongada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associar, caso necessária a associação deve-se monitorizar os sinais vitais e ajustar as doses conforme necessidade clínica. Além disso, o suporte ventilatório deve estar prontamente disponível em caso de parada respiratória"
+    },
+    {
+      "id": 129,
+      "par": "Fenobarbital + Fentanil",
+      "medicamento_1": "Fentanil",
+      "medicamento_2": "Fenobarbital",
+      "tipo_alerta": "",
+      "efeito": "Risco de sedação profunda, depressão respiratória, coma e morte. Por outro lado, ocorre redução na concentração plasmática do fentanil, reduzindo sua efetividade, além do risco de sintomas de abstinência em pacientes mantidos em seu regime opioide após a adição do fenobarbital",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associar, caso necessária a associação deve-se monitorizar os sinais vitais e de depressão respiratória, além de ajustar as doses conforme necessidade clínica"
+    },
+    {
+      "id": 130,
+      "par": "Fenobarbital + Morfina",
+      "medicamento_1": "Morfina",
+      "medicamento_2": "Fenobarbital",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associar, caso necessária a associação, deve-se monitorizar os sinais e sintomas de depressão respiratória e sedação"
+    },
+    {
+      "id": 131,
+      "par": "Cloreto de potassio + Espironolactona",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Espironolactona",
+      "tipo_alerta": "",
+      "efeito": "Hipercalemia, com existência de relato de morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas caso seja necessário é preciso muita cautela, particularmente em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave ou agravada, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos. Monitorizar níveis séricos de potássio"
+    },
+    {
+      "id": 132,
+      "par": "Amicacina + Succinilcolina",
+      "medicamento_1": "Amicacina",
+      "medicamento_2": "Succinilcolina",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associar, caso necessária a associação deve-se monitorizar os sinais vitais e ajustar as doses conforme necessidade clínica. Além disso, o suporte ventilatório deve estar prontamente disponível em caso de parada respiratória"
+    },
+    {
+      "id": 133,
+      "par": "Neomicina + Succinilcolina",
+      "medicamento_1": "Neomicina",
+      "medicamento_2": "Succinilcolina",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associar, caso necessária a associação deve-se monitorizar os sinais vitais e ajustar as doses conforme necessidade clínica"
+    },
+    {
+      "id": 134,
+      "par": "Azul de metileno + Morfina",
+      "medicamento_1": "Morfina",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Risco de crise de ansiedade, confusão, hipotensão, depressão respiratória, cianose e coma.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, mas se for necessário uso concomitante é preciso monitorar depressão respiratória e sedação. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa"
+    },
+    {
+      "id": 135,
+      "par": "Amitriptilina + Flumazenil",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Flumazenil",
+      "tipo_alerta": "",
+      "efeito": "Foram relatados efeitos adversos graves, incluindo mortes, após a administração de flumazenil em pacientes com overdose múltipla de medicamentos que tomaram grandes quantidades de antidepressivos tricíclicos. Os efeitos incluíram crises epilépticas e arritmias.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Não usar flumazenil em pacientes com suspeita de terem recebido uma overdose de antidepressivos tricíclicos"
+    },
+    {
+      "id": 136,
+      "par": "AAS + Enoxaparina",
+      "medicamento_1": "AAS",
+      "medicamento_2": "Enoxaparina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de complicações hemorrágicas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Usar com cautela. Além das complicações hemorrágicas, os pacientes devem ser monitorados quanto a sinais e sintomas de comprometimento neurológico"
+    },
+    {
+      "id": 137,
+      "par": "Enoxaparina + Heparina",
+      "medicamento_1": "Heparina",
+      "medicamento_2": "Enoxaparina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de complicações hemorrágicas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, ela deve ser realizada com cautela e somente após uma avaliação completa dos riscos e benefícios. Recomenda-se uma observação clínica e laboratorial rigorosa para complicações hemorrágicas"
+    },
+    {
+      "id": 138,
+      "par": "Alteplase + Enoxaparina",
+      "medicamento_1": "Alteplase",
+      "medicamento_2": "Enoxaparina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de complicações hemorrágicas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, ela deve ser realizada com cautela e somente após uma avaliação completa dos riscos e benefícios. Recomenda-se uma observação clínica e laboratorial rigorosa para complicações hemorrágicas"
+    },
+    {
+      "id": 139,
+      "par": "Diclofenaco + Enoxaparina",
+      "medicamento_1": "Diclofenaco",
+      "medicamento_2": "Enoxaparina",
+      "tipo_alerta": "",
+      "efeito": "Risco de desenvolver um hematoma epidural ou espinhal. O desenvolvimento de hematoma epidural e espinhal pode levar a paralisia a longo prazo ou permanente",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Recomenda-se uma observação clínica e laboratorial rigorosa para complicações hemorrágicas se for necessária terapia concomitante"
+    },
+    {
+      "id": 140,
+      "par": "Fentanil + Risperidona",
+      "medicamento_1": "Fentanil",
+      "medicamento_2": "Risperidona",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 141,
+      "par": "Morfina + Risperidona",
+      "medicamento_1": "Morfina",
+      "medicamento_2": "Risperidona",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 142,
+      "par": "Digoxina + Gluconato de calcio",
+      "medicamento_1": "Digoxina",
+      "medicamento_2": "Gluconato de calcio",
+      "tipo_alerta": "",
+      "efeito": "A administração de preparações de cálcio, particularmente por injeção rápida IV, pode precipitar arritmias cardíacas graves em pacientes digitalizados",
+      "acao": "Evitar a associação",
+      "recomendacao": "De preferência, o cálcio intravenoso não deve ser usado em pacientes que recebem glicosídeos digitálicos ou deve ser administrado lentamente ou em pequenas quantidades para evitar altas concentrações séricas de cálcio. Os pacientes devem ser monitorados quanto ao desenvolvimento de arritmias"
+    },
+    {
+      "id": 143,
+      "par": "Clorpromazina + Tramadol",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 144,
+      "par": "Diazepam + Tramadol",
+      "medicamento_1": "Diazepam",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 145,
+      "par": "Clonazepam + Tramadol",
+      "medicamento_1": "Clonazepam",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 146,
+      "par": "Fentanil + Tramadol",
+      "medicamento_1": "Fentanil",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 147,
+      "par": "Fluoxetina + Tramadol",
+      "medicamento_1": "Fluoxetina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome da serotoninérgica",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar uso do tramadol. Se usar: os pacientes devem ser monitorados de perto quanto a sintomas da síndrome da serotoninérgica"
+    },
+    {
+      "id": 148,
+      "par": "Morfina + Tramadol",
+      "medicamento_1": "Morfina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte. Em pacientes que foram previamente dependentes ou usaram cronicamente opióides, o tramadol pode reiniciar a dependência física ou precipitar os sintomas de abstinência.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado. Monitorizar crises epilépticas, depressão respiratória e sedação"
+    },
+    {
+      "id": 149,
+      "par": "Fenobarbital + Tramadol",
+      "medicamento_1": "Fenobarbital",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 150,
+      "par": "Noradrenalina + Sevoflurano",
+      "medicamento_1": "Noradrenalina",
+      "medicamento_2": "Sevoflurano",
+      "tipo_alerta": "",
+      "efeito": "Irritabilidade ventricular, arritmias cardíacas graves ou morte. Os anestésicos halogenados sensibilizam o coração aos efeitos arritmogênicos das catecolaminas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Esta combinação deve ser evitada ou usada com muito cuidado, caso necessário usar, recomendam-se doses muito baixas de concentrações de norepinefrina e o status hemodinâmico do paciente deve ser monitorado de perto."
+    },
+    {
+      "id": 151,
+      "par": "Epinefrina + Sevoflurano",
+      "medicamento_1": "Epinefrina",
+      "medicamento_2": "Sevoflurano",
+      "tipo_alerta": "",
+      "efeito": "Irritabilidade ventricular, arritmias cardíacas graves ou morte. Os anestésicos halogenados sensibilizam o coração aos efeitos arritmogênicos das catecolaminas",
+      "acao": "Evitar a associação",
+      "recomendacao": "A combinação deve ser evitada ou usada com muito cuidado. Se forem usados juntos, recomenda-se uma concentração baixa de epinefrina e o status hemodinâmico do paciente deve ser monitorado de perto"
+    },
+    {
+      "id": 152,
+      "par": "Carvedilol + Metildopa",
+      "medicamento_1": "Metildopa",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Crises hipertensivas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar essa combinação. Se não for possível, a pressão arterial deve ser monitorada junto com os sintomas precoces de uma crise hipertensiva (náusea, vômito, sudorese, rubor, rigidez no pescoço, dor de cabeça ou palpitações)"
+    },
+    {
+      "id": 153,
+      "par": "Albuterol + Carvedilol",
+      "medicamento_1": "Albuterol",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Broncoespasmo agudo e com risco de vida em pacientes com asma ou outras doenças obstrutivas das vias aéreas.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessária a coadministração, geralmente é preferido um betabloqueador cardiosseletivo (por exemplo, atenolol até 50 mg, metoprolol, nebivolol)"
+    },
+    {
+      "id": 154,
+      "par": "Aminofilina + Carvedilol",
+      "medicamento_1": "Aminofilina",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Os efeitos farmacológicos das teofilinas e betabloqueadores são opostos. Doses não seletivas (> 50 mg/dia de atenolol) e altas de betabloqueadores cardiosseletivos podem causar broncoespasmo grave ou fatal por oposição à broncodilatação induzida pela aminofilina.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Betabloqueadores não seletivos, orais e oftálmicos são contraindicados em pacientes com doenças broncoespásticas (asma e DPOC). Os betabloqueadores cardiosseletivos devem ser evitados ou usados com extrema cautela se não houver outras alternativas"
+    },
+    {
+      "id": 155,
+      "par": "Amicacina + Cisatracurio",
+      "medicamento_1": "Amicacina",
+      "medicamento_2": "Cisatracurio",
+      "tipo_alerta": "",
+      "efeito": "Depressão respiratória grave e/ou prolongada",
+      "acao": "Evitar a associação",
+      "recomendacao": "O uso de aminoglicosídeos deve ser evitado durante e imediatamente após a cirurgia na qual os bloqueadores neuromusculares foram empregados. Se usados, os sinais vitais devem ser monitorados de perto e as doses ajustadas. Além disso, o suporte ventilatório deve estar prontamente disponível em caso de parada respiratória"
+    },
+    {
+      "id": 156,
+      "par": "Cisatracurio + Neomicina",
+      "medicamento_1": "Neomicina",
+      "medicamento_2": "Cisatracurio",
+      "tipo_alerta": "",
+      "efeito": "Depressão respiratória grave e/ou prolongada",
+      "acao": "Evitar a associação",
+      "recomendacao": "O uso de aminoglicosídeos deve ser evitado durante e imediatamente após a cirurgia na qual os bloqueadores neuromusculares foram empregados. Se usados, os sinais vitais devem ser monitorados de perto e as doses ajustadas. Além disso, o suporte ventilatório deve estar prontamente disponível em caso de parada respiratória"
+    },
+    {
+      "id": 157,
+      "par": "Acido valproico + Meropenem",
+      "medicamento_1": "Acido valproico",
+      "medicamento_2": "Meropenem",
+      "tipo_alerta": "",
+      "efeito": "Diminui a concentração sérica de ácido valpróico de 50 a 90%, aumentando o risco de crises epilépticas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se for necessária a coadministração, pode ser aconselhável terapia antiepiléptica adjuvante, uma vez que aumentar a dose de ácido valpróico por si só pode não ser suficiente para superar a interação. Monitorar concentração sérica de ácido valpróico. Considerar outra alternativa de tratamento."
+    },
+    {
+      "id": 158,
+      "par": "Clorpromazina + Remifentanila",
+      "medicamento_1": "Clorpromazina",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 159,
+      "par": "Diazepam + Remifentanila",
+      "medicamento_1": "Diazepam",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 160,
+      "par": "Clonazepam + Remifentanila",
+      "medicamento_1": "Clonazepam",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 161,
+      "par": "Fenobarbital + Remifentanila",
+      "medicamento_1": "Fenobarbital",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 162,
+      "par": "Amitriptilina + Epinefrina",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Epinefrina",
+      "tipo_alerta": "",
+      "efeito": "Resposta pressórica aumentada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, exceto em casos de emergência (por exemplo, tratamento de anafilaxia). Se for necessário o uso concomitante, deve ser monitorado de perto"
+    },
+    {
+      "id": 163,
+      "par": "Epinefrina + Isoflurano",
+      "medicamento_1": "Isoflurano",
+      "medicamento_2": "Epinefrina",
+      "tipo_alerta": "",
+      "efeito": "Irritabilidade ventricular, arritmias cardíacas graves ou morte. Os anestésicos halogenados sensibilizam o coração aos efeitos arritmogênicos das catecolaminas",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessário, recomenda-se doses baixas de epinefrina e monitorização do estado hemodinâmico do paciente"
+    },
+    {
+      "id": 164,
+      "par": "Amitriptilina + Metaraminol",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Metaraminol",
+      "tipo_alerta": "",
+      "efeito": "Resposta pressórica aumentada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, exceto em casos de emergência (por exemplo, tratamento de anafilaxia), caso necessário o uso concomitante, deve se monitorar pressão arterial"
+    },
+    {
+      "id": 165,
+      "par": "Amitriptilina + Fenilefrina",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Fenilefrina",
+      "tipo_alerta": "",
+      "efeito": "Resposta pressórica aumentada",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, exceto em casos de emergência (por exemplo, tratamento de anafilaxia). Se for necessário o uso concomitante, deve ser monitorado de perto"
+    },
+    {
+      "id": 166,
+      "par": "Aminofilina + Metoprolol",
+      "medicamento_1": "Metoprolol",
+      "medicamento_2": "Aminofilina",
+      "tipo_alerta": "",
+      "efeito": "Os efeitos farmacológicos das teofilinas e betabloqueadores são opostos. Doses não seletivas (> 50 mg/dia de atenolol) e altas de betabloqueadores cardiosseletivos podem causar broncoespasmo grave ou fatal por oposição à broncodilatação induzida pela teofilina.",
+      "acao": "Evitar a associação",
+      "recomendacao": "Betabloqueadores não seletivos, orais e oftálmicos são considerados contraindicados em pacientes com doenças broncoespásticas (asma e DPOC). Os betabloqueadores cardiosseletivos devem ser evitados ou usados com extrema cautela se não houver outras alternativas"
+    },
+    {
+      "id": 167,
+      "par": "Fentanila + Hidroxizina",
+      "medicamento_1": "Fentanila",
+      "medicamento_2": "Hidroxizina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 168,
+      "par": "Hidroxizina + Morfina",
+      "medicamento_1": "Morfina",
+      "medicamento_2": "Hidroxizina",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipotensão, sedação profunda, depressão respiratória, coma e morte",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação. Se a coadministração for necessária, a dose e a duração de cada medicamento devem ser limitadas ao mínimo necessário para alcançar o efeito clínico desejado"
+    },
+    {
+      "id": 169,
+      "par": "Clopidogrel + Fluconazol",
+      "medicamento_1": "Fluconazol",
+      "medicamento_2": "Clopidogrel",
+      "tipo_alerta": "",
+      "efeito": "A inibição da CYP450 2C19 pelo fluconazol reduz a efetividade do clopidogrel, cujo efeito antiplaquetário depende em parte da bioativação da isoenzima em um metabólito farmacologicamente ativo",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação do fluconazol"
+    },
+    {
+      "id": 170,
+      "par": "Clopidogrel + Fluoxetina",
+      "medicamento_1": "Fluoxetina",
+      "medicamento_2": "Clopidogrel",
+      "tipo_alerta": "",
+      "efeito": "A inibição da CYP450 2C19 pela fluoxetina reduz a efetividade do clopidogrel, cujo efeito antiplaquetário depende em parte da bioativação da isoenzima em um metabólito farmacologicamente ativo",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar a associação da fluoxetina"
+    },
+    {
+      "id": 171,
+      "par": "Carbamazepina + Nimodipina",
+      "medicamento_1": "Carbamazepina",
+      "medicamento_2": "Nimodipina",
+      "tipo_alerta": "",
+      "efeito": "Redução da concentração plasmática e dos efeitos farmacológicos da nimodipina",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, se for necessário associar deve-se monitorar pressão arterial e aumentar dose de nimodipina conforme necessidade"
+    },
+    {
+      "id": 172,
+      "par": "Fenitoina + Nimodipina",
+      "medicamento_1": "Fenitoina",
+      "medicamento_2": "Nimodipina",
+      "tipo_alerta": "",
+      "efeito": "Redução da concentração plasmática e dos efeitos farmacológicos da nimodipina",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, se for necessário associar deve-se monitorar pressão arterial e aumentar dose de nimodipina conforme necessidade"
+    },
+    {
+      "id": 173,
+      "par": "Fenobarbital + Nimodipina",
+      "medicamento_1": "Nimodipina",
+      "medicamento_2": "Fenobarbital",
+      "tipo_alerta": "",
+      "efeito": "Redução da concentração plasmática e dos efeitos farmacológicos da nimodipina",
+      "acao": "Evitar a associação",
+      "recomendacao": "Evitar associação, caso necessário deve-se monitorizar os efeitos pressóricos e aumentar dose de nimodipina conforme necessidade"
+    },
+    {
+      "id": 174,
+      "par": "Clopidogrel + Omeprazol",
+      "medicamento_1": "Clopidogrel",
+      "medicamento_2": "Omeprazol",
+      "tipo_alerta": "",
+      "efeito": "Inibição dos efeitos do clopidogrel",
+      "acao": "Geralmente evitar",
+      "recomendacao": "Evitar uso simultâneo. Optar por pantoprazol/lansoprazol"
+    },
+    {
+      "id": 175,
+      "par": "Sertralina + Tramadol",
+      "medicamento_1": "Sertralina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome serotoninérgica",
+      "acao": "Geralmente evitar",
+      "recomendacao": "Monitorizar sintomas da síndrome serotoninérgica"
+    },
+    {
+      "id": 176,
+      "par": "AAS + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "AAS",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar RNI e sinais e sintomas de sangramento."
+    },
+    {
+      "id": 177,
+      "par": "Enoxaparina + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Enoxaparina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de complicações hemorrágicas",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar sinais sintomas de sangramento"
+    },
+    {
+      "id": 178,
+      "par": "Dexametasona + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Dexametasona",
+      "tipo_alerta": "",
+      "efeito": "Diminuição da concentração plasmática de metadona,",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "A resposta farmacológica à metadona deve ser monitorada mais de perto, e a dose ajustada conforme necessário"
+    },
+    {
+      "id": 179,
+      "par": "Ondansetrona + Remifentanila",
+      "medicamento_1": "Ondansetrona",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso. Monitorizar sintomas da síndrome serotoninérgica"
+    },
+    {
+      "id": 180,
+      "par": "Amiodarona + Varfarina",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Varfarina",
+      "tipo_alerta": "",
+      "efeito": "A amiodarona aumenta os efeitos farmacológicos da varfarina e isso pode causar hipoprotrombinemia e sangramento significativos",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Redução de 30% a 50% da dose de varfarina, além de monitoramento frequente do paciente com RNI (quando amiodarona for iniciada)"
+    },
+    {
+      "id": 181,
+      "par": "Ciprofloxacino + Varfarina",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Varfarina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o efeito hipoprotrombinêmico da varfarina, aumentando o risco de sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar RNI e se necessário reduzir ajustar dose de varfarina"
+    },
+    {
+      "id": 182,
+      "par": "Amiodarona + Diltiazem",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Diltiazem",
+      "tipo_alerta": "",
+      "efeito": "Efeitos farmacodinâmicos aditivos que pode causar parada sinusal, redução da contratilidade miocárdica e hipotensão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar o estado hemodinâmico e eletrocardiográfico do paciente, especialmente durante o início de uso de amiodarona."
+    },
+    {
+      "id": 183,
+      "par": "Amiodarona + Verapamil",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Verapamil",
+      "tipo_alerta": "",
+      "efeito": "Efeitos farmacodinâmicos aditivos que pode causar parada sinusal, redução da contratilidade miocárdica e hipotensão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar o estado hemodinâmico e eletrocardiográfico do paciente, especialmente durante o início de amiodarona."
+    },
+    {
+      "id": 184,
+      "par": "Amiodarona + Metadona",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Metadona",
+      "tipo_alerta": "",
+      "efeito": "Prolonga intervalo QT, que resulta em efeitos aditivos e aumento do risco de arritmias ventriculares",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se a metadona for usada em combinação com medicamentos que possam prolongar intervalo QT"
+    },
+    {
+      "id": 185,
+      "par": "Atenolol + Diltiazem",
+      "medicamento_1": "Atenolol",
+      "medicamento_2": "Diltiazem",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente. Ajustar dose de um dos fármacos."
+    },
+    {
+      "id": 186,
+      "par": "Diltiazem + Propranolol",
+      "medicamento_1": "Propranolol",
+      "medicamento_2": "Diltiazem",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente. Ajustar dose de um dos fármacos."
+    },
+    {
+      "id": 187,
+      "par": "Atenolol + Verapamil",
+      "medicamento_1": "Atenolol",
+      "medicamento_2": "Verapamil",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente. Ajustar dose de um dos fármacos."
+    },
+    {
+      "id": 188,
+      "par": "Propranolol + Verapamil",
+      "medicamento_1": "Propranolol",
+      "medicamento_2": "Verapamil",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente. Ajustar dose de um dos fármacos."
+    },
+    {
+      "id": 189,
+      "par": "Ciprofloxacino + Metadona",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Metadona",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e dos efeitos farmacológicos da metadona",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "A resposta farmacológica à metadona deve ser monitorizada de perto e a dose deve ser ajustada em conformidade, particularmente após o início ou a interrupção do ciprofloxacino. Não usar mais de 100 mg/dia e a metadona"
+    },
+    {
+      "id": 190,
+      "par": "Haloperidol + Metadona",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Metadona",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso do haloperidol, particularmente quando administrado por via intravenosa ou em doses elevadas"
+    },
+    {
+      "id": 191,
+      "par": "Fluconazol + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Fluconazol",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e o efeito hipoprotrombinêmico da varfarina com aumento de RNI e risco de sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar clínica e RNI, e se necessário reduzir dose da varfarina"
+    },
+    {
+      "id": 192,
+      "par": "Fluconazol + Haloperidol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Fluconazol",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso do haloperidol, particularmente quando administrado por via intravenosa e/ou em doses elevadas"
+    },
+    {
+      "id": 193,
+      "par": "Fluconazol + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Fluconazol",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas"
+    },
+    {
+      "id": 194,
+      "par": "Ciprofloxacino + Prednisolona",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Prednisolona",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 195,
+      "par": "Azitromicina + Haloperidol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Azitromicina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso do haloperidol, particularmente quando administrado por via intravenosa ou em doses elevadas"
+    },
+    {
+      "id": 196,
+      "par": "Azitromicina + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Azitromicina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas"
+    },
+    {
+      "id": 197,
+      "par": "Claritromicina + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Claritromicina",
+      "tipo_alerta": "",
+      "efeito": "Aumento do efeito hipoprotrombinêmico da varfarina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar RNI e se necessário reduzir dose de varfarina"
+    },
+    {
+      "id": 198,
+      "par": "Claritromicina + Haloperidol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Claritromicina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso do haloperidol, particularmente quando administrado por via intravenosa ou em doses elevadas"
+    },
+    {
+      "id": 199,
+      "par": "Claritromicina + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Claritromicina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas"
+    },
+    {
+      "id": 200,
+      "par": "Adenosina + Amiodarona",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Adenosina",
+      "tipo_alerta": "",
+      "efeito": "Pode prolongar intervalo QT, resultando em aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "A adenosina deve ser usada com cautela em pacientes que estejam recebendo medicamentos que sabidamente prolongam o intervalo QT. Se ocorrer bradicardia: a adenosina deve ser descontinuada imediatamente"
+    },
+    {
+      "id": 201,
+      "par": "Amiodarona + Dexametasona",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Dexametasona",
+      "tipo_alerta": "",
+      "efeito": "Redução da concentração sérica de amiodarona e seu metabólito desetilamiodarona (DEA), resultando em falha terapêutica.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se Monitorizar os níveis séricos de amiodarona e DEA e o estado clínico do paciente se a dexametasona for adicionada ou excluída no plano terapêutico. Terapia alternativa ou ajustes de dose também devem ser considerados."
+    },
+    {
+      "id": 202,
+      "par": "Amiodarona + Fentanil",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de fentanil, com risco de depressão respiratória fatal",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Fazer monitorização rigorosa e reduzir dose de fentanil, conforme necessidade"
+    },
+    {
+      "id": 203,
+      "par": "Metronidazol + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Metronidazol",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e do efeito hipoprotrombinêmico da varfarina, podendo causar sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar clínica e RNI, e ajustar reduzir dose de varfarina conforme necessidade, sobretudo após o início ou descontinuação do metronidazol"
+    },
+    {
+      "id": 204,
+      "par": "Norfloxacino + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Norfloxacino",
+      "tipo_alerta": "",
+      "efeito": "Aumento do efeito hipoprotrombinêmico da varfarina, podendo causar sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar clínica e RNI e se necessário reduzir dose da varfarina, sobretudo após o início ou descontinuação da terapêutica com quinolona"
+    },
+    {
+      "id": 205,
+      "par": "Haloperidol + Norfloxacino",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Norfloxacino",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT, que pode resultar em efeitos aditivos e aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela, particularmente quando o haloperidol for administrado por via intravenosa ou em doses elevadas"
+    },
+    {
+      "id": 206,
+      "par": "Metadona + Norfloxacino",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Norfloxacino",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT, que pode resultar em efeitos aditivos e aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas"
+    },
+    {
+      "id": 207,
+      "par": "Norfloxacino + Prednisolona",
+      "medicamento_1": "Prednisolona",
+      "medicamento_2": "Norfloxacino",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 208,
+      "par": "Sulfadiazina + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Sulfadiazina",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e dos efeitos hipoprotrombinêmicos da varfarina, podendo causar sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar clínica e RNI, e se necessário reduzir dose de varfarina, particularmente após o início ou descontinuação da terapêutica com sulfonamida"
+    },
+    {
+      "id": 209,
+      "par": "Sulfametoxazol + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Sulfametoxazol",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e dos efeitos hipoprotrombinêmicos da varfarina, podendo causar sangramento",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar clínica e RNI, e se necessário reduzir dose de varfarina, particularmente após o início ou descontinuação da terapêutica com sulfametoxazol"
+    },
+    {
+      "id": 210,
+      "par": "Clonidina + Metoprolol",
+      "medicamento_1": "Clonidina",
+      "medicamento_2": "Metoprolol",
+      "tipo_alerta": "",
+      "efeito": "Efeitos farmacodinâmicos sinérgicos, resultando em bloqueio AV acentuado, bradicardia e hipotensão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitoramento rigoroso da pressão arterial, frequência cardíaca, tontura, síncope e dor de cabeça. A clonidina nunca deve ser descontinuada abruptamente, dose deve ser diminuída ao longo de 2 a 4 dias"
+    },
+    {
+      "id": 211,
+      "par": "Diltiazem + Metoprolol",
+      "medicamento_1": "Diltiazem",
+      "medicamento_2": "Metoprolol",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente, e a dose de um ou de ambos os medicamentos devem ser ajustadas conforme a necessidade"
+    },
+    {
+      "id": 212,
+      "par": "Metoprolol + Verapamil",
+      "medicamento_1": "Verapamil",
+      "medicamento_2": "Metoprolol",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente, caso esses agentes sejam utilizados em conjunto, e a dose de um ou de ambos os medicamentos devem ser ajustadas conforme a necessidade"
+    },
+    {
+      "id": 213,
+      "par": "Fenitoina + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Fenitoina",
+      "tipo_alerta": "",
+      "efeito": "Redução da concentração plasmática de metadona, reduzindo a efetividade do medicamento. Sintomas de abstinência da metadona podem ocorrer após a adição de um indutor enzimático (Fenitoína).",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar resposta farmacológica e sintomas de abstinência relacionados à metadona, sempre que um indutor for adicionado ou retirado da terapia. A dose de metadona deve ser ajustada conforme necessidade"
+    },
+    {
+      "id": 214,
+      "par": "Fenitoina + Fluconazol",
+      "medicamento_1": "Fluconazol",
+      "medicamento_2": "Fenitoina",
+      "tipo_alerta": "",
+      "efeito": "Aumento dos níveis séricos de fenitoína e risco de toxicidade",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitoramento clínico e da concentração plasmática de fenitoína sempre que o fluconazol for adicionado, descontinuado ou a dose alterada. Monitorizar toxicidade (sonolência, perturbações visuais, alteração do estado mental, náuseas ou ataxia). Se necessário reduzir dose da fenitoína."
+    },
+    {
+      "id": 215,
+      "par": "Amitriptilina + Haloperidol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Amitriptilina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT relacionado com a dose do haloperidol, provocando risco elevado de arritmias ventriculares",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol e uso intravenoso"
+    },
+    {
+      "id": 216,
+      "par": "Amitriptilina + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Amitriptilina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT relacionado à dose da metadona, aumentando o risco de arritmias ventriculares",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas"
+    },
+    {
+      "id": 217,
+      "par": "Ciprofloxacino + Dexametasona",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Dexametasona",
+      "tipo_alerta": "",
+      "efeito": "Potencializar o risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco (idosos e pacientes transplantados). Evitar exercício na área afetada"
+    },
+    {
+      "id": 218,
+      "par": "Dexametasona + Norfloxacino",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Dexametasona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados). Evitar exercício na área afetada"
+    },
+    {
+      "id": 219,
+      "par": "Claritromicina + Digoxina",
+      "medicamento_1": "Claritromicina",
+      "medicamento_2": "Digoxina",
+      "tipo_alerta": "",
+      "efeito": "Aumento na concentração plasmática de digoxina, com risco de intoxicação digitálica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se precaução com uso concomitante. Os níveis séricos de digoxina e os efeitos farmacológicos devem ser monitorados de perto e a dose deve ser ajustada, particularmente após o início ou a descontinuação da claritromicina"
+    },
+    {
+      "id": 220,
+      "par": "Adenosina + Digoxina",
+      "medicamento_1": "Adenosina",
+      "medicamento_2": "Digoxina",
+      "tipo_alerta": "",
+      "efeito": "Aumento do risco de fibrilação ventricular",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "A adenosina deve ser usada com cautela em pacientes que recebem glicosídeos digitálicos. A adenosina deve ser descontinuada imediatamente se ocorrer angina, bradicardia grave, hipotensão grave ou assistolia. Além disso, pacientes que desenvolvem bloqueio atrioventricular de alto nível em uma dose de adenosina não devem receber doses adicionais. Medidas apropriadas de ressuscitação devem estar prontamente disponíveis"
+    },
+    {
+      "id": 221,
+      "par": "Diltiazem + Fentanil",
+      "medicamento_1": "Diltiazem",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de fentanil, com risco de depressão respiratória potencialmente fatal",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar de perto e reduzir a dose de fentanil conforme necessidade"
+    },
+    {
+      "id": 222,
+      "par": "Fentanil + Verapamil",
+      "medicamento_1": "Verapamil",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de fentanil",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar de perto e reduzir a dose de fentanil conforme necessidade"
+    },
+    {
+      "id": 223,
+      "par": "Carbamazepina + Fentanil",
+      "medicamento_1": "Carbamazepina",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Diminuição da concentração plasmática de fentanil",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorização próxima quando for adicionado ou retirado da terapia, e a dose de fentanil deve ser aumentada conforme necessidade"
+    },
+    {
+      "id": 224,
+      "par": "Fentanil + Fluconazol",
+      "medicamento_1": "Fluconazol",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de fentanil, podendo levar a depressão respiratória potencialmente fatal.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar de perto. Reduzir a dose de fentanil conforme necessidade, isso é particularmente importante quando o fluconazol é adicionado ou retirado após uma dose estável de fentanil"
+    },
+    {
+      "id": 225,
+      "par": "Claritromicina + Fentanil",
+      "medicamento_1": "Claritromicina",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de fentanil, podendo causar depressão respiratória potencialmente fatal",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar de perto. Reduzir a dose de fentanil conforme necessidade, isso é particularmente importante quando a claritromicina é adicionada ou retirada após uma dose estável de fentanil"
+    },
+    {
+      "id": 226,
+      "par": "Fenitoina + Fentanil",
+      "medicamento_1": "Fenitoina",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Diminuição da concentração plasmática de fentanil",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorização próxima quando adicionado ou retirado da terapia, e a dose do fentanil deve ser aumentada conforme necessidade"
+    },
+    {
+      "id": 227,
+      "par": "Amitriptilina + Fentanil",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de síndrome serotoninérgica, com alterações do estado mental",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, mas quando for necessária deve-se Monitorizar de perto os sintomas da síndrome serotoninérgica"
+    },
+    {
+      "id": 228,
+      "par": "Dexametasona + Fentanil",
+      "medicamento_1": "Dexametasona",
+      "medicamento_2": "Fentanil",
+      "tipo_alerta": "",
+      "efeito": "Diminuição na concentração plasmática de fentanil, com redução da efetividade e presença de sintomas de abstinência relacionados ao fentanil",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar resposta farmacológica do fentanil. E se necessário aumentar dose desse medicamento"
+    },
+    {
+      "id": 229,
+      "par": "Fluoxetina + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Fluoxetina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT, com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela durante o uso, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas"
+    },
+    {
+      "id": 230,
+      "par": "Fentanil + Fluoxetina",
+      "medicamento_1": "Fentanil",
+      "medicamento_2": "Fluoxetina",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar a associação. Caso não seja possível Monitorizar sinais e sintomas de síndrome serotoninérgica"
+    },
+    {
+      "id": 231,
+      "par": "Ciprofloxacino + Hidrocortisona",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Hidrocortisona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (Idosos e transplantados). Evitar exercício na área afetada"
+    },
+    {
+      "id": 232,
+      "par": "Amiodarona + Fenobarbital",
+      "medicamento_1": "Amiodarona",
+      "medicamento_2": "Fenobarbital",
+      "tipo_alerta": "",
+      "efeito": "Diminuição da concentração sérica de amiodarona e seu metabólito desetilamiodarona (DEA), resultando em falha terapêutica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar os níveis séricos de amiodarona e DEA e o estado clínico do paciente, sobretudo quando fenobarbital for adicionado ou retirado de um esquema. Monitorizar frequência cardíaca"
+    },
+    {
+      "id": 233,
+      "par": "Captopril + Cloreto de potassio",
+      "medicamento_1": "Captopril",
+      "medicamento_2": "Cloreto de potassio",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, mas caso seja necessário monitorizar níveis de potássio (particularmente em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave ou agravada, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos)"
+    },
+    {
+      "id": 234,
+      "par": "Captopril + Espironolactona",
+      "medicamento_1": "Captopril",
+      "medicamento_2": "Espironolactona",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorar níveis de potássio"
+    },
+    {
+      "id": 235,
+      "par": "Captopril + Iodeto de potassio",
+      "medicamento_1": "Captopril",
+      "medicamento_2": "Iodeto de potassio",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, mas caso seja necessário monitorizar níveis de potássio (particularmente em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave ou agravada, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos)"
+    },
+    {
+      "id": 236,
+      "par": "Ciprofloxacino + Insulina",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Insulina",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipoglicemia e também hiperglicemia, visto que a quinolona tem efeito nos canais de potássio sensíveis ao ATP da célula beta pancreática, que regulam a secreção de insulina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar glicose. Devido ao risco de hipoglicemia profunda e potencialmente fatal, recomenda-se maior precaução em caso de uso concomitante de insulina e secretagogos de insulina (sulfoniluréias e glinidas)"
+    },
+    {
+      "id": 237,
+      "par": "Ciprofloxacino + Metilprednisolona",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Metilprednisolona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 238,
+      "par": "Ciprofloxacino + Prednisona",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Prednisona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 239,
+      "par": "Betametasona + Ciprofloxacino",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Betametasona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de tendinite e ruptura do tendão",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 240,
+      "par": "Ciprofloxacino + Tramadol",
+      "medicamento_1": "Ciprofloxacino",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de crises epilépticas, devido à redução no limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso, sobretudo em idosos e em pacientes com epilepsia ou fatores de risco para crises epilépticas"
+    },
+    {
+      "id": 241,
+      "par": "Cloreto de potassio + Enalapril",
+      "medicamento_1": "Enalapril",
+      "medicamento_2": "Cloreto de potassio",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, mas caso seja necessário é preciso muita cautela, particularmente em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave ou agravada, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos. Monitorizar níveis de potássio"
+    },
+    {
+      "id": 242,
+      "par": "Enalapril + Espironolactona",
+      "medicamento_1": "Enalapril",
+      "medicamento_2": "Espironolactona",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar níveis de potássio"
+    },
+    {
+      "id": 243,
+      "par": "Enalapril + Iodeto de potassio",
+      "medicamento_1": "Enalapril",
+      "medicamento_2": "Iodeto de potassio",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, mas caso seja necessário é preciso muita cautela, particularmente em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave ou agravada, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos. Monitorizar níveis de potássio"
+    },
+    {
+      "id": 244,
+      "par": "Gentamicina + Sulfato de magnesio",
+      "medicamento_1": "Gentamicina",
+      "medicamento_2": "Sulfato de magnesio",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada, devido ao feito dos aminoglicosídeos de bloquear atividade neuromuscular, que pode ser aditiva a do magnésio parenteral",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se monitorização cuidadosa especialmente em pacientes com insuficiência renal e / ou com níveis elevados de magnésio. Evitar uso de aminoglicosídeos em crianças com hipermagnesemia"
+    },
+    {
+      "id": 245,
+      "par": "Loperamida + Ranitidina",
+      "medicamento_1": "Ranitidina",
+      "medicamento_2": "Loperamida",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de loperamida, devido a melhor absorção e inibição do metabolismo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Precaução no uso. Não exceder dose e frequência de uso e Monitorizar sintomas cardíacos"
+    },
+    {
+      "id": 246,
+      "par": "Alteplase + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Alteplase",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de sangramento grave",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Não usar alteplase em pacientes com acidente vascular encefálico isquêmico (AVEi) em uso de anticoagulantes orais e têm RNI > que 1,7. Para outras indicações, o risco/benefício deve ser ponderado e o RNI monitorado"
+    },
+    {
+      "id": 247,
+      "par": "Levofloxacino + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Aumento do efeito hipoprotrombinêmico e do risco de hemorragia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar RNI e fazer o ajuste de dose da varfarina conforme resultado do RNI"
+    },
+    {
+      "id": 248,
+      "par": "Clopidogrel + Varfarina",
+      "medicamento_1": "Varfarina",
+      "medicamento_2": "Clopidogrel",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hemorragia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar sinais de hemorragia e valor de RNI"
+    },
+    {
+      "id": 249,
+      "par": "Haloperidol + Prometazina",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Prometazina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT relacionado com a dose, podendo resultar em efeitos aditivos e aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol"
+    },
+    {
+      "id": 250,
+      "par": "Haloperidol + Ondansetrona",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Ondansetrona",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol. Verificar possibilidade de outro antimético, como domperidona"
+    },
+    {
+      "id": 251,
+      "par": "Haloperidol + Hidroxizina",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Hidroxizina",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol"
+    },
+    {
+      "id": 252,
+      "par": "Haloperidol + Risperidona",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Risperidona",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol"
+    },
+    {
+      "id": 253,
+      "par": "Haloperidol + Tramadol",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol"
+    },
+    {
+      "id": 254,
+      "par": "Haloperidol + Sevoflurano",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Sevoflurano",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol"
+    },
+    {
+      "id": 255,
+      "par": "Haloperidol + Levofloxacino",
+      "medicamento_1": "Haloperidol",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, se não for possível evitar doses elevadas de haloperidol"
+    },
+    {
+      "id": 256,
+      "par": "Epinefrina + Propranolol",
+      "medicamento_1": "Propranolol",
+      "medicamento_2": "Epinefrina",
+      "tipo_alerta": "",
+      "efeito": "Os betabloqueadores não-cardiosseletivos podem aumentar significativamente a resposta pressora à epinefrina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Extrema cautela e monitoramento rigoroso do estado cardiovascular. Pode ser necessária redução da dose de epinefrina. A retirada de betabloqueadores antes da anestesia pode aumentar o risco de isquemia miocárdica e não é recomendada"
+    },
+    {
+      "id": 257,
+      "par": "Carvedilol + Clonidina",
+      "medicamento_1": "Clonidina",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Pode ocorrer bloqueio AV acentuado, bradicardia e hipotensão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se o monitoramento rigoroso da pressão arterial em pacientes que recebem essa combinação. O betabloqueador deve ser descontinuado alguns dias antes da interrupção gradual da clonidina. A clonidina nunca deve ser descontinuada abruptamente, mas deve ser diminuída ao longo de 2 a 4 dias."
+    },
+    {
+      "id": 258,
+      "par": "Diltiazem + Metoprolol",
+      "medicamento_1": "Diltiazem",
+      "medicamento_2": "Metoprolol",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca. Embora essa combinação possa ser útil em algumas situações, podem ocorrer efeitos adversos cardiovasculares potencialmente graves",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente, e a dose de um ou de ambos os agentes seja ajustada conforme a necessidade. Monitorizar presença de: fadiga, dor de cabeça, síncope, edema das extremidades, ganho de peso, falta de ar, dor no peito, aumento, diminuição ou irregularidade na frequência cardíaca"
+    },
+    {
+      "id": 259,
+      "par": "Diltiazem + Loperamida",
+      "medicamento_1": "Diltiazem",
+      "medicamento_2": "Loperamida",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de loperamida no plasma e no sistema nervoso central (SNC), devido a inibição do transportador de efluxo, glicoproteína P (gp-P) causada pelo diltiazem. A inibição da P-gp no intestino aumenta a absorção sistêmica da loperamida e facilita a entrada da loperamida no SNC",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se precaução no uso. Recomenda-se especial cautela no uso da loperamida, se outros medicamentos que inibem outras vias de eliminação da loperamida (CYP450 2C8; CYP450 3A4) também forem usados, pois podem agir sinergicamente com inibidores da P-gp para aumentar as concentrações de loperamida"
+    },
+    {
+      "id": 260,
+      "par": "Carvedilol + Diltiazem",
+      "medicamento_1": "Diltiazem",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Reduções aditivas na frequência cardíaca, condução cardíaca e contratilidade cardíaca. Embora essa combinação possa ser útil em algumas situações, podem ocorrer efeitos adversos cardiovasculares potencialmente graves",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se a monitorização clínica rigorosa da resposta hemodinâmica e da tolerância do paciente, e a dose de um ou de ambos os agentes seja ajustada conforme a necessidade. Monitorizar presença de: fadiga, dor de cabeça, síncope, edema das extremidades, ganho de peso, falta de ar, dor no peito, aumento, diminuição ou irregularidade na frequência cardíaca"
+    },
+    {
+      "id": 261,
+      "par": "Citalopram + Remifentanila",
+      "medicamento_1": "Remifentanila",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Potencializa o risco de síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, mas se não for possível deve-se Monitorizar de perto os sintomas da síndrome serotoninérgica"
+    },
+    {
+      "id": 262,
+      "par": "Citalopram + Ondansetrona",
+      "medicamento_1": "Ondansetrona",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares e aumento do risco de síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso e monitoramento de sintomas da síndrome serotoninérgica, eletrocardiograma, hipomagnesemia e hipocalemia. Verificar possibilidade de outro antimético, como domperidona"
+    },
+    {
+      "id": 263,
+      "par": "Citalopram + Fentanila",
+      "medicamento_1": "Fentanila",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Risco de potencializar a síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cautela no uso e monitoramento de sintomas da síndrome serotoninérgica, eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 264,
+      "par": "Adenosina + Citalopram",
+      "medicamento_1": "Adenosina",
+      "medicamento_2": "Citalopram",
+      "tipo_alerta": "",
+      "efeito": "Risco de bradicardia, prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "A adenosina deve ser usada com cautela, e ela deve ser descontinuada imediatamente se ocorrer bradicardia grave"
+    },
+    {
+      "id": 265,
+      "par": "Loperamida + Verapamil",
+      "medicamento_1": "Verapamil",
+      "medicamento_2": "Loperamida",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática de loperamida no plasma e no sistema nervoso central (SNC), devido a inibição do transportador de efluxo, glicoproteína P (gp-P) causada pela amiodarona. A inibição da P-gp no intestino aumenta a absorção sistêmica da loperamida e facilita a entrada da loperamida no SNC",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se precaução no uso. Recomenda-se especial cautela no uso da loperamida, se outros medicamentos que inibem outras vias de eliminação da loperamida (CYP450 2C8; CYP450 3A4) também forem usados, pois podem agir sinergicamente com inibidores da P-gp para aumentar as concentrações de loperamida"
+    },
+    {
+      "id": 266,
+      "par": "Carvedilol + Verapamil",
+      "medicamento_1": "Verapamil",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Reduções na frequência, condução e contratilidade cardíaca",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorização clínica rigorosa da resposta, caso esses medicamentos sejam utilizados em conjunto, a dose de um ou de ambos os devem ser ajustadas conforme a necessidade. Monitorizar os seguintes sintomas: fadiga, dor de cabeça, síncope, edema das extremidades, ganho de peso, falta de ar, dor no peito, frequência cardíaca"
+    },
+    {
+      "id": 267,
+      "par": "Paracetamol + Prilocaina",
+      "medicamento_1": "Paracetamol",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 268,
+      "par": "Metadona + Prometazina",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Prometazina",
+      "tipo_alerta": "",
+      "efeito": "Risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia."
+    },
+    {
+      "id": 269,
+      "par": "Metadona + Ondansetrona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Ondansetrona",
+      "tipo_alerta": "",
+      "efeito": "Risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 270,
+      "par": "Metadona + Risperidona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Risperidona",
+      "tipo_alerta": "",
+      "efeito": "Risco de arritmias ventriculares e prolongamento do intervalo QT",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 271,
+      "par": "Metadona + Sevoflurano",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Sevoflurano",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 272,
+      "par": "Levofloxacino + Metadona",
+      "medicamento_1": "Metadona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Prolongamento do intervalo QT com aumento do risco de arritmias ventriculares, incluindo torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela no uso da metadona, particularmente no contexto do manejo da dor crônica ou manutenção com metadona para dependência de opioides, em que altas doses podem ser empregadas. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 273,
+      "par": "Lidocaina + Prilocaina",
+      "medicamento_1": "Lidocaina",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 274,
+      "par": "Lidocaina + Tramadol",
+      "medicamento_1": "Lidocaina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzirem limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para convulsões (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 275,
+      "par": "Meropenem + Tramadol",
+      "medicamento_1": "Tramadol",
+      "medicamento_2": "Meropenem",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para convulsões (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 276,
+      "par": "Clopidogrel + Loperamida",
+      "medicamento_1": "Loperamida",
+      "medicamento_2": "Clopidogrel",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e dos efeitos adversos da loperamida",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Não exceder a dose e frequência recomendadas da loperamida. Monitorizar: torsades de pointes, tontura, palpitação, ritmo cardíaco irregular, falta de ar ou síncope"
+    },
+    {
+      "id": 277,
+      "par": "Ondansetrona + Tramadol",
+      "medicamento_1": "Ondansetrona",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome serotoninérgica e redução da efetividade analgésica do tramadol. Prolongamento do intervalo QT e, aumento do risco de arritmias ventriculares, como torsades de pointes e morte súbita",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação. Se necessária, monitorar sintomas da síndrome serotoninérgica, eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 278,
+      "par": "Azul de metileno + Ondansetrona",
+      "medicamento_1": "Ondansetrona",
+      "medicamento_2": "Azul de metileno",
+      "tipo_alerta": "",
+      "efeito": "Aumento da atividade serotonérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar sintomas da síndrome serotoninérgica. Essa interação tem relevância clínica quando o azul de metileno é utilizado por via endovenosa"
+    },
+    {
+      "id": 279,
+      "par": "Hidrocortisona + Norfloxacino",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Hidrocortisona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de tendinite e ruptura de tendões",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 280,
+      "par": "Insulina + Norfloxacino",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Insulina",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipoglicemia e também de hiperglicemia, visto que a quinolona tem efeito nos canais de potássio sensíveis ao ATP da célula beta pancreática, que regulam a secreção de insulina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar glicose. Devido ao risco de hipoglicemia profunda e potencialmente fatal, recomenda-se maior precaução em caso de uso concomitante de insulina e secretagogos de insulina (sulfoniluréias e glinidas)"
+    },
+    {
+      "id": 281,
+      "par": "Metilprednisolona + Norfloxacino",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Metilprednisolona",
+      "tipo_alerta": "",
+      "efeito": "Potencializa risco de tendinite e ruptura de tendões",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 282,
+      "par": "Amicacina + Sulfato de magnesio",
+      "medicamento_1": "Amicacina",
+      "medicamento_2": "Sulfato de magnesio",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada. Além disso, os aminoglicosídeos podem reduzir os níveis séricos de magnésio.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorização cuidadosa, especialmente em pacientes com insuficiência renal e / ou com níveis elevados de magnésio. Evitar a administração de aminoglicosídeos em bebês com hipermagnesemia"
+    },
+    {
+      "id": 283,
+      "par": "Neomicina + Sulfato de magnesio",
+      "medicamento_1": "Neomicina",
+      "medicamento_2": "Sulfato de magnesio",
+      "tipo_alerta": "",
+      "efeito": "Risco de depressão respiratória grave e / ou prolongada. Além disso, os aminoglicosídeos podem reduzir os níveis séricos de magnésio.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorização cuidadosa, especialmente em pacientes com insuficiência renal e / ou com níveis elevados de magnésio. Evitar a administração de aminoglicosídeos em bebês com hipermagnesemia"
+    },
+    {
+      "id": 284,
+      "par": "Alteplase + Heparina",
+      "medicamento_1": "Heparina",
+      "medicamento_2": "Alteplase",
+      "tipo_alerta": "",
+      "efeito": "Risco elevado de sangramento, embora essa combinação seja recomendada para certas indicações (ex.infarto agudo do miocárdio, embolia pulmonar)",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Realizar monitorização clínica e laboratorial. O alteplase é contraindicado em pacientes com acidente vascular cerebral isquêmico agudo que receberam heparina nas últimas 48 horas e apresentam tempo parcial de tromboplastina ativada (TTPa) elevado. Ajustar dose de heparina conforme necessidade clínica e laboratorial"
+    },
+    {
+      "id": 285,
+      "par": "Claritromicina + Loperamida",
+      "medicamento_1": "Claritromicina",
+      "medicamento_2": "Loperamida",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e dos efeitos adversos da loperamida",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Não exceder a dose e frequência recomendadas da loperamida. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia , tontura, palpitação, ritmo cardíaco irregular, falta de ar ou síncope. Se houver suspeita de cardiotoxicidade induzida pela loperamida, interrompa imediatamente a loperamida"
+    },
+    {
+      "id": 286,
+      "par": "Espironolactona + Loperamida",
+      "medicamento_1": "Espironolactona",
+      "medicamento_2": "Loperamida",
+      "tipo_alerta": "",
+      "efeito": "Aumento da concentração plasmática e dos efeitos adversos da loperamida",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Não exceder a dose e frequência recomendadas da loperamida. Monitorizar eletrocardiograma, hipomagnesemia e hipocalemia, tontura, palpitação, ritmo cardíaco irregular, falta de ar ou síncope"
+    },
+    {
+      "id": 287,
+      "par": "Cloreto de potassio + Losartana",
+      "medicamento_1": "Cloreto de potassio",
+      "medicamento_2": "Losartana",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Se necessário associar, monitorizar níveis de potássio (sobretudo em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos)"
+    },
+    {
+      "id": 288,
+      "par": "Espironolactona + Losartana",
+      "medicamento_1": "Espironolactona",
+      "medicamento_2": "Losartana",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Se necessário associar, monitorizar níveis de potássio (sobretudo em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos)"
+    },
+    {
+      "id": 289,
+      "par": "Iodeto de potassio + Losartana",
+      "medicamento_1": "Iodeto de potassio",
+      "medicamento_2": "Losartana",
+      "tipo_alerta": "",
+      "efeito": "Risco de hipercalemia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Se necessário associar, monitorizar níveis de potássio (sobretudo em paciente com comprometimento renal, diabetes, insuficiência cardíaca grave, desidratação ou terapêutica concomitante com outros agentes que aumentem o potássio sérico e idosos)"
+    },
+    {
+      "id": 290,
+      "par": "Norfloxacino + Tramadol",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para crises epilépticas (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 291,
+      "par": "Amitriptilina + Tramadol",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para crises epilépticas (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 292,
+      "par": "Metoclopramida + Tramadol",
+      "medicamento_1": "Metoclopramida",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para crises epilépticas (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 293,
+      "par": "Neostigmina + Tramadol",
+      "medicamento_1": "Neostigmina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para crises epilépticas (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 294,
+      "par": "Aminofilina + Tramadol",
+      "medicamento_1": "Aminofilina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para crises epilépticas (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 295,
+      "par": "Prometazina + Tramadol",
+      "medicamento_1": "Prometazina",
+      "medicamento_2": "Tramadol",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas por reduzir limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se o tramadol for administrado com qualquer substância que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de convulsões ou outros fatores de risco para crises epilépticas (por exemplo, traumatismo craniano, tumor cerebral, distúrbios, abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 296,
+      "par": "Carvedilol + Epinefrina",
+      "medicamento_1": "Epinefrina",
+      "medicamento_2": "Carvedilol",
+      "tipo_alerta": "",
+      "efeito": "Os betabloqueadores não cardiosseletivos podem aumentar a resposta da epinefrina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Cuidado extremo e monitoramento rigoroso do estado cardiovascular. Verificar necessidade de redução da dose de epinefrina."
+    },
+    {
+      "id": 297,
+      "par": "Fluoxetina + Remifentanila",
+      "medicamento_1": "Fluoxetina",
+      "medicamento_2": "Remifentanila",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Evitar associação, caso necessária, deve-se monitorizar os sinais e sintomas da síndrome serotoninérgica"
+    },
+    {
+      "id": 298,
+      "par": "Levofloxacino + Prednisolona",
+      "medicamento_1": "Prednisolona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 299,
+      "par": "Dexametasona + Levofloxacino",
+      "medicamento_1": "Dexametasona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 300,
+      "par": "Hidrocortisona + Levofloxacino",
+      "medicamento_1": "Hidrocortisona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 301,
+      "par": "Insulina + Levofloxacino",
+      "medicamento_1": "Insulina",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Aumento no risco de hipoglicemia e também hiperglicemia, visto que a quinolona tem efeito nos canais de potássio sensíveis ao ATP da célula beta pancreática, que regulam a secreção de insulina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar glicose. Devido ao risco de hipoglicemia profunda e potencialmente fatal, recomenda-se maior precaução em caso de uso concomitante de insulina e secretagogos de insulina (sulfoniluréias e glinidas)"
+    },
+    {
+      "id": 302,
+      "par": "Levofloxacino + Metilprednisolona",
+      "medicamento_1": "Metilprednisolona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 303,
+      "par": "Levofloxacino + Prednisona",
+      "medicamento_1": "Prednisona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 304,
+      "par": "Betametasona + Levofloxacino",
+      "medicamento_1": "Betametasona",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 305,
+      "par": "Levofloxacino + Tramadol",
+      "medicamento_1": "Tramadol",
+      "medicamento_2": "Levofloxacino",
+      "tipo_alerta": "",
+      "efeito": "Risco de crises epilépticas, por reduzir o limiar convulsivo",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se a associação de substâncias que possa reduzir o limiar convulsivo, particularmente em idosos e em pacientes com epilepsia, histórico de epilepsia ou outros fatores de risco (ex. abstinência de álcool e drogas, infecções do SNC)"
+    },
+    {
+      "id": 306,
+      "par": "Betametasona + Norfloxacino",
+      "medicamento_1": "Norfloxacino",
+      "medicamento_2": "Betametasona",
+      "tipo_alerta": "",
+      "efeito": "Potencial maior para causar tendinite e ruptura do tendão.",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela se as fluoroquinolonas forem prescritas em combinação com corticosteroides, particularmente em pacientes com outros fatores de risco concomitantes (idosos e transplantados)"
+    },
+    {
+      "id": 307,
+      "par": "Amitriptilina + Ondansetrona",
+      "medicamento_1": "Amitriptilina",
+      "medicamento_2": "Ondansetrona",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome serotoninérgica e prolongamento de intervalo QT e arritmia",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorizar sinais e sintomas da síndrome serotoninérgica e intervalo QT"
+    },
+    {
+      "id": 308,
+      "par": "Fentanil + Ondansetrona",
+      "medicamento_1": "Fentanil",
+      "medicamento_2": "Ondansetrona",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome serotoninérgica",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Recomenda-se cautela. Os pacientes devem ser monitorados de perto quanto a sintomas da síndrome serotoninérgica"
+    },
+    {
+      "id": 309,
+      "par": "Fluoxetina + Ondansetrona",
+      "medicamento_1": "Fluoxetina",
+      "medicamento_2": "Ondansetrona",
+      "tipo_alerta": "",
+      "efeito": "Risco de síndrome serotoninérgica e prolongamento do intervalo QT",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Monitorar sintomas da síndrome serotoninérgica, eletrocardiograma, hipomagnesemia e hipocalemia"
+    },
+    {
+      "id": 310,
+      "par": "Acetaminofeno + Prilocaina",
+      "medicamento_1": "Acetaminofeno",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 311,
+      "par": "Prilocaina + Sulfadiazina",
+      "medicamento_1": "Sulfadiazina",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 312,
+      "par": "Prilocaina + Sulfametoxazol",
+      "medicamento_1": "Sulfametoxazol",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 313,
+      "par": "Fenitoina + Prilocaina",
+      "medicamento_1": "Fenitoina",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 314,
+      "par": "Dinitrato de isossorbida + Prilocaina",
+      "medicamento_1": "Dinitrato de isossorbida",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 315,
+      "par": "Monoitrato de isossorbida + Prilocaina",
+      "medicamento_1": "Monoitrato de isossorbida",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 316,
+      "par": "Metoclopramida + Prilocaina",
+      "medicamento_1": "Metoclopramida",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 317,
+      "par": "Nitroglicerina + Prilocaina",
+      "medicamento_1": "Nitroglicerina",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 318,
+      "par": "Fenobarbital + Prilocaina",
+      "medicamento_1": "Fenobarbital",
+      "medicamento_2": "Prilocaina",
+      "tipo_alerta": "",
+      "efeito": "Formação de metemoglobina relacionada com a dose através do seu metabólito orto-toluidina. Neonatos e lactentes são particularmente suscetíveis devido a uma menor atividade da enzima que reduz a metahemoglobina para hemoglobina",
+      "acao": "Monitorizar de perto",
+      "recomendacao": "Prilocaína deve ser usada com cautela. Os níveis de metemoglobina devem ser monitorados e o oxigênio administrado sempre que possível. Monitorizar sinais e sintomas de metemoglobinemia"
+    },
+    {
+      "id": 319,
+      "par": "AAS + Nimesulida",
+      "medicamento_1": "AAS",
+      "medicamento_2": "Nimesulida",
+      "tipo_alerta": "",
+      "efeito": "Aumenta o risco de sangramento",
+      "acao": "",
+      "recomendacao": "Monitorizar sinais de sangramento. Tomar AAS duas horas antes do AINE"
+    }
+  ]
+}

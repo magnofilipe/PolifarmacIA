@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/lib/api";
 import {
   ArrowLeft,
   Plus,
@@ -10,8 +10,10 @@ import {
   Pill,
   Pencil,
   X,
+  CheckCircle2
 } from "lucide-react";
 import { SubstanceCombobox } from "@/components/SubstanceCombobox";
+import { InteractionModal, type Conflict } from "@/components/InteractionModal";
 
 export const Route = createFileRoute("/_authenticated/patients/$id")({
   component: PatientDetail,
@@ -54,6 +56,11 @@ function PatientDetail() {
   const [saving, setSaving] = useState(false);
   const [editing, setEditing] = useState(false);
 
+  // Estados de análise de interação
+  const [showModal, setShowModal] = useState(false);
+  const [conflicts, setConflicts] = useState<Conflict[]>([]);
+  const [showNoConflictMsg, setShowNoConflictMsg] = useState(false);
+
   const [newMed, setNewMed] = useState({
     substance: "",
     dose: "",
@@ -64,70 +71,94 @@ function PatientDetail() {
 
   useEffect(() => {
     (async () => {
-      const [{ data: p, error: pe }, { data: m, error: me }] =
-        await Promise.all([
-          supabase.from("patients").select("*").eq("id", id).maybeSingle(),
-          supabase.from("medications").select("*").eq("patient_id", id).order("created_at"),
-        ]);
-      if (pe || me) { setError((pe || me)!.message); return; }
-      setPatient(p as Patient);
-      setMeds((m as Medication[]) ?? []);
+      try {
+        const data = await api.get(`/patients/${id}`);
+        setPatient(data);
+        setMeds(data.medicamentos || []);
+      } catch (err: any) {
+        setError(err.message);
+      }
     })();
   }, [id]);
 
   async function savePatient() {
     if (!patient) return;
     setSaving(true);
-    const { error } = await supabase
-      .from("patients")
-      .update({
+    try {
+      await api.put(`/patients/${patient.id}`, {
         full_name: patient.full_name,
         birth_date: patient.birth_date,
         sex: patient.sex,
         conditions: patient.conditions,
         notes: patient.notes,
-      })
-      .eq("id", patient.id);
-    setSaving(false);
-    if (error) setError(error.message);
-    else setEditing(false);
+      });
+      setEditing(false);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setSaving(false);
+    }
   }
 
   async function addMed(e: React.FormEvent) {
     e.preventDefault();
     if (!newMed.substance.trim()) return;
-    const { data: u } = await supabase.auth.getUser();
-    if (!u.user || !patient) return;
-    const { data, error } = await supabase
-      .from("medications")
-      .insert({
-        patient_id: patient.id,
-        doctor_id: u.user.id,
+    if (!patient) return;
+
+    try {
+      // 1. Salva o medicamento
+      const addedMed = await api.post(`/patients/${patient.id}/medications`, {
         substance: newMed.substance.trim(),
         dose: newMed.dose || null,
         posology: newMed.posology || null,
         route: newMed.route || null,
         started_on: newMed.started_on || null,
-      })
-      .select("*")
-      .single();
-    if (error) { setError(error.message); return; }
-    setMeds((prev) => [...prev, data as Medication]);
-    setNewMed({ substance: "", dose: "", posology: "", route: "", started_on: "" });
+      });
+      
+      const newMedsList = [...meds, addedMed];
+      setMeds(newMedsList);
+      setNewMed({ substance: "", dose: "", posology: "", route: "", started_on: "" });
+      
+      // 2. Dispara análise de interação se houver mais de um medicamento
+      setShowNoConflictMsg(false);
+      const substances = newMedsList.map(m => m.substance);
+      
+      if (substances.length > 1) {
+        const analysisData = await api.post("/analysis", { substances });
+        if (analysisData.conflicts && analysisData.conflicts.length > 0) {
+          setConflicts(analysisData.conflicts);
+          setShowModal(true);
+        } else {
+          setShowNoConflictMsg(true);
+          // Ocultar mensagem de sucesso após alguns segundos
+          setTimeout(() => setShowNoConflictMsg(false), 5000);
+        }
+      }
+
+    } catch (err: any) {
+      setError(err.message);
+    }
   }
 
   async function removeMed(mid: string) {
-    const { error } = await supabase.from("medications").delete().eq("id", mid);
-    if (error) { setError(error.message); return; }
-    setMeds((prev) => prev.filter((m) => m.id !== mid));
+    if (!patient) return;
+    try {
+      await api.delete(`/patients/${patient.id}/medications/${mid}`);
+      setMeds((prev) => prev.filter((m) => m.id !== mid));
+    } catch (err: any) {
+      setError(err.message);
+    }
   }
 
   async function deletePatient() {
     if (!patient) return;
     if (!confirm(`Excluir paciente ${patient.full_name}?`)) return;
-    const { error } = await supabase.from("patients").delete().eq("id", patient.id);
-    if (error) { setError(error.message); return; }
-    navigate({ to: "/patients" });
+    try {
+      await api.delete(`/patients/${patient.id}`);
+      navigate({ to: "/patients" });
+    } catch (err: any) {
+      setError(err.message);
+    }
   }
 
   if (error && !patient) {
@@ -143,6 +174,13 @@ function PatientDetail() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-8">
+      {/* Modal de Interações */}
+      <InteractionModal 
+        isOpen={showModal} 
+        onClose={() => setShowModal(false)} 
+        conflicts={conflicts} 
+      />
+
       <div className="no-print mb-4 flex items-center justify-between">
         <Link to="/patients" className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-primary">
           <ArrowLeft className="h-4 w-4" /> Pacientes
@@ -158,7 +196,7 @@ function PatientDetail() {
             onClick={() => setEditing(true)}
             className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium transition-all hover:border-primary/40 hover:text-primary"
           >
-            <Pencil className="h-4 w-4" /> Alterar dados deste paciente
+            <Pencil className="h-4 w-4" /> Alterar dados
           </button>
           <button
             onClick={deletePatient}
@@ -249,9 +287,17 @@ function PatientDetail() {
 
       {/* Medications */}
       <section className="mt-6 card-surface p-6">
-        <div className="flex items-center gap-2">
-          <Pill className="h-5 w-5 text-primary" />
-          <h2 className="text-lg font-semibold">Medicamentos</h2>
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <Pill className="h-5 w-5 text-primary" />
+            <h2 className="text-lg font-semibold">Medicamentos</h2>
+          </div>
+          
+          {showNoConflictMsg && (
+            <div className="animate-in fade-in flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700">
+              <CheckCircle2 className="h-4 w-4" /> Nenhuma interação detectada
+            </div>
+          )}
         </div>
         <p className="mt-1 text-sm text-muted-foreground">
           Adicione a substância, dose, posologia e via. Interações são detectadas automaticamente.
