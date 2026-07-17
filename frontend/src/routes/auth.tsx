@@ -68,14 +68,9 @@ function AuthPage() {
             </div>
           </div>
 
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="text-3xl font-semibold tracking-tight text-primary">
             {mode === "login" ? "Entre na sua conta" : "Crie sua conta"}
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {mode === "login"
-              ? "Acesse o painel para gerenciar pacientes e alertas."
-              : "Cadastre-se para começar a monitorar interações."}
-          </p>
 
           <form onSubmit={onSubmit} className="mt-8 space-y-4">
             <div>
