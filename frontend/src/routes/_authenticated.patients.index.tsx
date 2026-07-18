@@ -71,26 +71,28 @@ function PatientsList() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <div className="mb-6 flex items-end justify-between gap-4">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Pacientes</h1>
           <p className="text-base text-muted-foreground">
             Selecione um paciente para gerenciar medicamentos e ver alertas de interações.
           </p>
-          <button
-            onClick={() => setShowInfo(true)}
-            className="mt-3 inline-flex items-center gap-2 rounded-lg bg-[var(--accent-yellow)] px-4 py-2.5 text-sm font-semibold text-[var(--accent-yellow-foreground)] shadow-sm transition-all hover:brightness-105 hover:shadow-md"
-          >
-            <HelpCircle className="h-5 w-5" />
-            Como interações são detectadas?
-          </button>
+          <div className="mt-4 flex flex-wrap items-center gap-6">
+            <Link
+              to="/patients/new"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-elegant transition-transform hover:-translate-y-0.5"
+            >
+              <Plus className="h-5 w-5" /> Novo paciente
+            </Link>
+            <button
+              onClick={() => setShowInfo(true)}
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent-yellow)] px-4 py-2.5 text-sm font-semibold text-[var(--accent-yellow-foreground)] shadow-sm transition-all hover:brightness-105 hover:shadow-md"
+            >
+              <HelpCircle className="h-5 w-5" />
+              Como interações são detectadas?
+            </button>
+          </div>
         </div>
-        <Link
-          to="/patients/new"
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-elegant transition-transform hover:-translate-y-0.5"
-        >
-          <Plus className="h-4 w-4" /> Novo paciente
-        </Link>
       </div>
 
       {error && (
