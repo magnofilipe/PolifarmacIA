@@ -80,7 +80,7 @@ function PatientsList() {
           <div className="mt-4 flex flex-wrap items-center gap-6">
             <Link
               to="/patients/new"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-elegant transition-transform hover:-translate-y-0.5"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground shadow-elegant transition-transform hover:-translate-y-0.5"
             >
               <Plus className="h-5 w-5" /> Novo paciente
             </Link>
