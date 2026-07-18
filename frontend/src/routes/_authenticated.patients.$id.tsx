@@ -190,13 +190,13 @@ function PatientDetail() {
             onClick={() => window.print()}
             className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium transition-all hover:border-primary/40 hover:text-primary"
           >
-            <FileDown className="h-4 w-4" /> Exportar PDF
+            <FileDown className="h-4 w-4" /> Imprimir esta página
           </button>
           <button
             onClick={() => setEditing(true)}
             className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium transition-all hover:border-primary/40 hover:text-primary"
           >
-            <Pencil className="h-4 w-4" /> Alterar dados
+            <Pencil className="h-4 w-4" /> Ver dados deste paciente
           </button>
           <button
             onClick={deletePatient}
@@ -208,7 +208,7 @@ function PatientDetail() {
       </div>
 
       <div className="print-container card-surface p-6">
-        <h1 className="text-2xl font-semibold tracking-tight">{patient.full_name}</h1>
+        <h1 className="text-primary text-2xl font-semibold tracking-tight">{patient.full_name}</h1>
         <p className="text-sm text-muted-foreground">
           {[age !== null ? `${age} anos` : null, patient.sex].filter(Boolean).join(" • ") || "Sem informações demográficas"}
         </p>
@@ -225,9 +225,9 @@ function PatientDetail() {
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <h2 className="text-lg font-semibold">Alterar dados do paciente</h2>
+                <h2 className="text-lg font-semibold">Dados do paciente</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Atualize apenas os campos necessários.
+                  Você pode atualizar as informações abaixo, se necessário.
                 </p>
               </div>
               <button
@@ -271,7 +271,7 @@ function PatientDetail() {
                 onClick={() => setEditing(false)}
                 className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:border-primary/40 hover:text-primary"
               >
-                Cancelar
+                Fechar
               </button>
               <button
                 onClick={savePatient}
@@ -352,7 +352,7 @@ function PatientDetail() {
             <input type="date" value={newMed.started_on} onChange={(e) => setNewMed({ ...newMed, started_on: e.target.value })} className={inputCls} />
           </Field>
           <div className="flex items-end">
-            <button className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:opacity-90">
+            <button className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-all hover:opacity-90">
               <Plus className="h-4 w-4" /> Adicionar
             </button>
           </div>
