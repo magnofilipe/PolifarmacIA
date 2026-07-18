@@ -30,12 +30,12 @@ const steps = [
   {
     title: "Cadastro do paciente e medicamentos",
     description:
-      "O médico cadastra o paciente e seleciona os medicamentos em uma lista padronizada. Isso garante que os nomes dos remédios estejam sempre corretos.",
+      "Você, médico, cadastra pacientes e seleciona seus respectivos medicamentos, incluindo a substância, dose, posologia e via.",
   },
   {
     title: "Cruzamento automático",
     description:
-      "O sistema verifica, em fração de segundo, todas as combinações possíveis entre os medicamentos escolhidos.",
+      "O sistema verifica os medicamentos selecionados e detecta interações automaticamente.",
   },
   {
     title: "Busca em documentos clínicos",
@@ -193,7 +193,7 @@ function PatientsList() {
             <div className="mt-6 flex justify-end">
               <button
                 onClick={() => setShowInfo(false)}
-                className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:opacity-90"
+                className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-all hover:opacity-90"
               >
                 Entendi
               </button>
