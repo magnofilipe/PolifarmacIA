@@ -80,7 +80,7 @@ function AuthPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="voce@clinica.com"
+                placeholder="voce@gmail.com"
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-primary"
               />
             </div>
@@ -92,7 +92,7 @@ function AuthPage() {
                 minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Mínimo 6 caracteres"
+                placeholder="********"
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-primary"
               />
             </div>
@@ -104,7 +104,7 @@ function AuthPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-elegant transition-all hover:-translate-y-0.5 hover:opacity-95 disabled:opacity-50"
+              className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground shadow-elegant transition-all hover:-translate-y-0.5 hover:opacity-95 disabled:opacity-50"
             >
               {loading ? "Aguarde…" : mode === "login" ? "Entrar" : "Criar conta"}
             </button>
@@ -113,9 +113,9 @@ function AuthPage() {
           <button
             type="button"
             onClick={() => { setError(null); setMode(mode === "login" ? "signup" : "login"); }}
-            className="mt-6 w-full text-sm text-muted-foreground transition-colors hover:text-primary"
+            className="mt-6 w-full text-sm text-muted-foreground transition-colors text-primary hover:text-[#023ca1]"
           >
-            {mode === "login" ? "Não tem conta? Cadastre-se" : "Já tem conta? Entrar"}
+            {mode === "login" ? "Não tem conta? Clique aqui para se cadastrar!" : "Já tem conta? Clique aqui para entrar"}
           </button>
         </div>
       </section>
