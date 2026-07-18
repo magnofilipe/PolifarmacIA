@@ -113,7 +113,7 @@ function AuthPage() {
           <button
             type="button"
             onClick={() => { setError(null); setMode(mode === "login" ? "signup" : "login"); }}
-            className="mt-6 w-full text-sm text-muted-foreground transition-colors text-primary hover:text-[#023ca1]"
+            className="mt-4 w-full text-sm text-muted-foreground transition-colors text-primary hover:text-[#023ca1]"
           >
             {mode === "login" ? "Não tem conta? Clique aqui para se cadastrar!" : "Já tem conta? Clique aqui para entrar"}
           </button>
@@ -129,20 +129,20 @@ function AuthPage() {
               "radial-gradient(600px 400px at 20% 10%, color-mix(in oklab, white 25%, transparent), transparent 60%), radial-gradient(500px 400px at 90% 90%, color-mix(in oklab, white 20%, transparent), transparent 60%)",
           }}
         />
-        <div className="relative z-10 flex max-w-md flex-col items-center px-8 text-center text-primary-foreground">
+        <div className="relative z-10 flex max-w-[490px] flex-col items-center px-8 text-center text-primary-foreground">
           <img
             src={illustration}
             alt="Ilustração médica"
             width={520}
             height={520}
-            className="w-full max-w-md drop-shadow-xl"
+            className="w-full max-w-[300px] drop-shadow-xl"
           />
           <h2 className="mt-6 text-2xl font-semibold tracking-tight">
             Prescrições mais seguras
           </h2>
           <p className="mt-2 text-sm/relaxed text-primary-foreground/90">
-            Detecte interações medicamentosas em segundos e reduza riscos na
-            polifarmácia dos seus pacientes.
+            Administre a polifarmácia de seus pacientes de forma centralizada e<br></br>
+            Detecte interações medicamentosas em segundos e reduza riscos!
           </p>
         </div>
       </section>
