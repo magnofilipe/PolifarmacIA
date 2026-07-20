@@ -2,7 +2,7 @@ import type { Conflict, RetrievedChunk } from "../../types/analysis.js";
 import { embedQuery } from "./embedding.service.js";
 import { queryByEmbedding } from "./vector.service.js";
 
-const RESULTS_PER_CONFLICT = 3;
+const RESULTS_PER_CONFLICT = 2;
 
 export interface RetrievedContext {
   conflict: Conflict;

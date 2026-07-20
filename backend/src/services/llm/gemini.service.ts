@@ -5,6 +5,7 @@ import type { PatientProfile } from "../../types/patient.js";
 import type { RetrievedContext } from "../rag/rag.service.js";
 import { loosePairKey } from "../../utils/normalize.js";
 import { withRetry } from "../../utils/retry.js";
+import { getCached, setCached } from "./cache.js";
 
 // Alias "lite" do flash atual: baixa latência (~1-2s vs ~12s do flash normal) e à prova
 // de descontinuação (o gemini-2.5-flash, por ex., ficou indisponível para chaves novas).
@@ -72,9 +73,15 @@ function buildContextSection(contexts: RetrievedContext[]): string {
   return contexts
     .map(({ conflict, chunks }) => {
       const chunkText =
-        chunks.length > 0
-          ? chunks.map((c, i) => `  [Trecho ${i + 1}] ${c.texto}`).join("\n")
-          : "  (nenhum trecho recuperado na base vetorial para este par)";
+              chunks.length > 0
+                ? chunks
+                    .slice(0, 2)
+                    .map(
+                      (c, i) =>
+                        ` [Trecho ${i + 1}] ${c.texto.slice(0, 500)}`
+                    )
+                    .join("\n")          
+        : "  (nenhum trecho recuperado na base vetorial para este par)";
 
       return [
         `Par: ${conflict.par}`,
@@ -99,6 +106,20 @@ export async function generateJustifications(
 ): Promise<Map<string, RagJustification>> {
   if (contexts.length === 0) return new Map();
 
+  // CACHE: tenta retornar sem chamar Gemini
+  const cached = contexts
+    .map((c) => getCached(c.conflict.par))
+    .filter(Boolean);
+
+  if (cached.length === contexts.length) {
+    return new Map(
+      contexts.map((c, i) => [
+        loosePairKey(c.conflict.par),
+        cached[i]!,
+      ]),
+    );
+  }
+
   const prompt = [
     "Dados do paciente:",
     buildPatientSection(patient),
@@ -116,7 +137,6 @@ export async function generateJustifications(
           systemInstruction: SYSTEM_INSTRUCTION,
           responseMimeType: "application/json",
           responseSchema: JUSTIFICATION_SCHEMA,
-          // Desliga o raciocínio estendido: reduz a latência sem prejudicar esta tarefa.
           thinkingConfig: { thinkingBudget: 0 },
         },
       }),
@@ -145,6 +165,18 @@ export async function generateJustifications(
     if (conflictAtIndex) byPar.set(loosePairKey(conflictAtIndex), justificativa);
     if (item.par) byPar.set(loosePairKey(item.par), justificativa);
   });
+  const cachedResults = contexts
+    .map(c => getCached(c.conflict.par))
+    .filter(Boolean);
+
+if(cachedResults.length === contexts.length){
+    return new Map(
+        contexts.map((c,i)=>[
+            loosePairKey(c.conflict.par),
+            cachedResults[i]!
+        ])
+    );
+}
 
   return byPar;
 }

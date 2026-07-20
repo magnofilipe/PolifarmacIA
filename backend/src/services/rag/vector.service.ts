@@ -51,7 +51,6 @@ export async function countChunks(): Promise<number> {
   return collection.count();
 }
 
-/** Dentre os ids informados, retorna os que já existem na collection (para retomar ingestões). */
 export async function getExistingIds(ids: string[]): Promise<Set<string>> {
   if (ids.length === 0) return new Set();
   const collection = await getCollection();
