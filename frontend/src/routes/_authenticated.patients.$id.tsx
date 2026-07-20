@@ -59,6 +59,7 @@ function PatientDetail() {
   // Estados de análise de interação
   const [showModal, setShowModal] = useState(false);
   const [conflicts, setConflicts] = useState<Conflict[]>([]);
+  const [justifying, setJustifying] = useState(false);
   const [showNoConflictMsg, setShowNoConflictMsg] = useState(false);
 
   const [newMed, setNewMed] = useState({
@@ -124,10 +125,34 @@ function PatientDetail() {
       const substances = newMedsList.map(m => m.substance);
       
       if (substances.length > 1) {
+        // Fase 1 (rápida): detecção determinística → modal aparece na hora
         const analysisData = await api.post("/analysis", { substances });
-        if (analysisData.conflicts && analysisData.conflicts.length > 0) {
-          setConflicts(analysisData.conflicts);
+        const detected: Conflict[] = analysisData.conflicts || [];
+
+        if (detected.length > 0) {
+          setConflicts(detected);
           setShowModal(true);
+          setJustifying(true);
+
+          // Fase 2 (em segundo plano): justificativa da IA preenche o modal quando pronta
+          api
+            .post("/analysis/justify", {
+              conflicts: detected,
+              patient: {
+                full_name: patient.full_name,
+                birth_date: patient.birth_date,
+                sex: patient.sex,
+                conditions: patient.conditions,
+                notes: patient.notes,
+              },
+            })
+            .then((res) => {
+              if (res.conflicts) setConflicts(res.conflicts);
+            })
+            .catch(() => {
+              setConflicts((cs) => cs.map((c) => ({ ...c, rag_indisponivel: true })));
+            })
+            .finally(() => setJustifying(false));
         } else {
           setShowNoConflictMsg(true);
           // Ocultar mensagem de sucesso após alguns segundos
@@ -175,10 +200,11 @@ function PatientDetail() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-8">
       {/* Modal de Interações */}
-      <InteractionModal 
-        isOpen={showModal} 
-        onClose={() => setShowModal(false)} 
-        conflicts={conflicts} 
+      <InteractionModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        conflicts={conflicts}
+        loading={justifying}
       />
 
       <div className="no-print mb-4 flex items-center justify-between">

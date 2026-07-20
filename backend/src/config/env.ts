@@ -18,7 +18,11 @@ export const env = {
 
 
     GEMINI_KEY:
-        process.env.GEMINI_KEY!
+        process.env.GEMINI_KEY!,
+
+
+    CHROMA_URL:
+        process.env.CHROMA_URL || "http://localhost:8000"
 
 };
 

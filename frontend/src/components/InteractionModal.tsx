@@ -1,6 +1,13 @@
 import React from "react";
 import { AlertTriangle, X } from "lucide-react";
 
+export type RagJustification = {
+  gravidade: string;
+  mecanismo: string;
+  conduta: string;
+  texto: string;
+};
+
 export type Conflict = {
   id: number;
   par: string;
@@ -9,15 +16,18 @@ export type Conflict = {
   efeito: string;
   acao: string;
   recomendacao: string;
+  justificativa?: RagJustification;
+  rag_indisponivel?: boolean;
 };
 
 interface InteractionModalProps {
   isOpen: boolean;
   onClose: () => void;
   conflicts: Conflict[];
+  loading?: boolean;
 }
 
-export function InteractionModal({ isOpen, onClose, conflicts }: InteractionModalProps) {
+export function InteractionModal({ isOpen, onClose, conflicts, loading = false }: InteractionModalProps) {
   if (!isOpen) return null;
 
   // Função para retornar a cor baseada no tipo de ação (gravidade)
@@ -79,8 +89,38 @@ export function InteractionModal({ isOpen, onClose, conflicts }: InteractionModa
                     <strong className="font-semibold">Recomendação:</strong> {conflict.recomendacao}
                   </p>
                 </div>
-                
-                {/* Aqui entrará o texto do RAG no futuro */}
+
+                {conflict.justificativa && (
+                  <div className="mt-3 space-y-2 rounded-md border border-current/20 bg-white/40 p-3 text-sm leading-relaxed">
+                    <p className="text-xs font-semibold uppercase tracking-wider opacity-70">
+                      Justificativa clínica (gerada por IA a partir da base determinística)
+                    </p>
+                    <p>{conflict.justificativa.texto}</p>
+                    <p>
+                      <strong className="font-semibold">Mecanismo:</strong> {conflict.justificativa.mecanismo}
+                    </p>
+                    <p>
+                      <strong className="font-semibold">Conduta sugerida:</strong> {conflict.justificativa.conduta}
+                    </p>
+                  </div>
+                )}
+
+                {!conflict.justificativa && loading && (
+                  <div className="mt-3 flex items-center gap-2 rounded-md border border-current/20 bg-white/40 p-3 text-sm">
+                    <span className="opacity-70">Gerando justificativa clínica com IA</span>
+                    <span className="inline-flex items-end gap-1">
+                      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-current" style={{ animationDelay: "-0.3s" }} />
+                      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-current" style={{ animationDelay: "-0.15s" }} />
+                      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-current" />
+                    </span>
+                  </div>
+                )}
+
+                {!conflict.justificativa && !loading && conflict.rag_indisponivel && (
+                  <p className="mt-3 text-xs italic opacity-70">
+                    Justificativa por IA indisponível no momento — o alerta acima é baseado apenas na base determinística de interações.
+                  </p>
+                )}
               </div>
             ))}
           </div>
